@@ -1,0 +1,50 @@
+header {
+  background-color: #1D5B79;
+  height: 75px;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+nav {
+    width:100%;
+    position: relative;
+    font-family: 'Figtree', sans-serif;
+  }
+
+
+  nav ul {
+    right:0;
+    float: right;
+    margin-top: 24px;
+    margin-right: 40px;
+  }
+
+  nav.navLinks li {
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+
+  }
+  
+  li .resume {
+      color: #F29727;
+      font-size: 18px;
+      border: solid;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+
+  .a {
+    color: #C2DEDC;
+  }
+
+  .a, li .resume {
+      text-decoration: none;
+      padding: 0.5rem;
+
+  }
+  
+.resume:hover{
+  background-color: rgba(255, 83, 13, 0.1); 
+}
+  
