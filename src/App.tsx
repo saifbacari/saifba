@@ -1,4 +1,6 @@
 import Navbar from './components/Navbar/Navbar'
+import Hero from './components/Hero/Hero'
+import About from './components/About/About';
 
 const App: React.FC = () => {
   const links = [
@@ -11,6 +13,8 @@ const App: React.FC = () => {
   return (
     <div className="App">
         <Navbar links={links}/>
+        <Hero />
+        <About />
     </div>
   )
 }

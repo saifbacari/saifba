@@ -28,6 +28,8 @@
     place-items: center;
     min-width: 320px;
     min-height: 9vh;
+    background-color: #1D5B79;
+    padding-inline: 80px;
   }
   
   h1 {

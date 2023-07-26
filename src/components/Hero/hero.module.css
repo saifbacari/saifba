@@ -1,0 +1,19 @@
+.hero{
+    position:relative;
+}
+
+.buttonHero {
+    color: green;
+}
+
+.h1 {
+ color: rgb(80, 149, 80);
+
+ font-family: 'Tektur', cursive;
+}
+
+.h2 {
+    color: rgb(197, 197, 154);
+    font-family: "Futura-Books", sans-serif;
+}
+
