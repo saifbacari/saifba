@@ -1,3 +1,31 @@
-.about {
-    color: orange;
-}
+.header {
+    display: flex; 
+    align-items: center; 
+    
+  }
+  
+  .header h3 {
+    margin-right: 10px; 
+  }
+  
+  .header hr {
+    flex: 0.4;
+    margin: 0 10px;
+  }
+  
+  .content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .titleStack {
+    display: contents;
+  }
+
+ .stacklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:16px;
+    list-style: none;
+  }
+  
