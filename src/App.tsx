@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About';
+import Work from './components/work/Work';
+import Contact from './components/Contact/Contact';
 
 const App: React.FC = () => {
   const links = [
@@ -15,6 +17,8 @@ const App: React.FC = () => {
         <Navbar links={links}/>
         <Hero />
         <About />
+        <Work />
+        <Contact />
     </div>
   )
 }

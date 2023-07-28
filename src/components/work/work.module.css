@@ -1,0 +1,14 @@
+.work {
+    color:aquamarine;
+}
+
+.work ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 16px;
+}
+
+.work li {
+    border: 1px solid black;
+    background-color: blueviolet;
+}

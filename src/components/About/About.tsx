@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styles from './about.module.css';
+import Card from "../Cards/Card";
 
 interface AboutProps {}
 
@@ -7,10 +8,10 @@ const About: FC<AboutProps> = () => {
 
     return (
         <div className={styles.about}>
-             <div className={styles.header}>
+             <Card className="header">
                 <h3>01. About Me</h3>
                 <hr/>
-             </div>
+             </Card>
              <div className={styles.content}>
                 <p className={styles.p}>
                         Nulla pellentesque et enim vel condimentum. 
@@ -26,12 +27,14 @@ const About: FC<AboutProps> = () => {
                 <h1 className="mettre photo à l'interieur"></h1>
                     <p className={styles.titleStack}>Et harum quidem rerum facilis est et expedita distinctio :</p>
                     <ul className={styles.stacklist}>
-                        <li>JavaScript</li>
-                        <li>Ruby on Rails</li>
-                        <li>React</li>
-                        <li>TypeScript</li>
-                        <li>HTML/CSS</li>
-                        <li>SQL</li>
+                        <div>
+                            <li>JavaScript</li>
+                            <li>Ruby on Rails</li>
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>HTML/CSS</li>
+                            <li>SQL</li>
+                        </div>
                     </ul>
               </div>
 
