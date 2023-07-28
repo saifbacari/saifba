@@ -6,14 +6,10 @@ interface NavbarProps{
 }
 
 const Navbar : React.FC<NavbarProps> = ({ links }) => {
-//Créer un composant avec le state de scrolling : par défaut il est inactif
 const [scrolling, setScrolling] = useState(false);
 const [scrollDirection, setScrollDirection] = useState("up");
 let previousScrollY = 0
-//useEffect permettra de mémoriser que des lors qu'on scrolle jusqu'à un point donné, on peut mettre à jour l'état donné : 
-// tu crées une fonction qui va permettre de bouger des lors qu'il y a un scroll
 
-//determiner le sens du défilement
 
 
 

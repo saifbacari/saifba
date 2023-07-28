@@ -1,0 +1,14 @@
+.card {
+    display: flex; 
+    align-items: center; 
+    
+  }
+  
+  .card h3 {
+    margin-right: 10px; 
+  }
+  
+  .card hr {
+    flex: 0.4;
+    margin: 0 10px;
+  }
