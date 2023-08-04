@@ -1,3 +1,14 @@
 .contact {
-    position: relative;
+    flex-direction: column;
+    margin-top: 55px;
+    padding-bottom: 25px;
+}
+
+
+.contact button {
+    margin-left: 45%;
+}
+
+.contact h3 {
+    margin-left: 47%
 }

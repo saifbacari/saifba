@@ -1,10 +1,18 @@
 .hero{
     position:relative;
+    padding-bottom: 21px;
 }
 
 .buttonHero {
-    color: green;
+    background-color: transparent;
+    color: rgb(243, 159, 56);
+    border-color: initial
 }
+
+.buttonHero:hover {
+    background-color: rgba(255, 83, 13, 0.1); 
+    border: 1px solid rgb(243, 159, 56); 
+  }
 
 .h1 {
  color: rgb(80, 149, 80);
@@ -14,6 +22,8 @@
 
 .h2 {
     color: rgb(197, 197, 154);
-    font-family: "Futura-Books", sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 90px;
+    font-weight: bolder;
 }
 

@@ -6,6 +6,7 @@ interface AboutProps {}
 
 const About: FC<AboutProps> = () => {
 
+
     return (
         <div className={styles.about}>
              <Card className="header">
@@ -24,13 +25,21 @@ const About: FC<AboutProps> = () => {
                         id vulputate sem sodales id. Nunc at viverra erat. Donec dignissim 
                         aliquam nulla, non luctus quam convallis ut.
                     </p>
-                <h1 className="mettre photo à l'interieur"></h1>
+                    <img src="src/assets/images/profile.png" alt="Image 1" />
+
                     <p className={styles.titleStack}>Et harum quidem rerum facilis est et expedita distinctio :</p>
                     <ul className={styles.stacklist}>
                         <div>
-                            <li>JavaScript</li>
+                        
+                            <li>
+                            
+
+                                JavaScript
+                            </li>
                             <li>Ruby on Rails</li>
                             <li>React</li>
+                        </div>
+                        <div>
                             <li>TypeScript</li>
                             <li>HTML/CSS</li>
                             <li>SQL</li>

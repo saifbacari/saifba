@@ -1,14 +1,32 @@
 .work {
     color:aquamarine;
+    
 }
 
-.work ul {
+.work .listProject {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 21px;
+    padding-left: 0px;
 }
 
-.work li {
-    border: 1px solid black;
-    background-color: blueviolet;
+.work .elementList {
+    position: relative;
+    border-radius: 4px;
+    background-color: #247094 ;
+    height: 300px;
+    list-style: none;
+}
+
+.work .stacksProject {
+    list-style: none;
+}
+
+.work .faPlay {
+    padding-right: 4px;
+}
+
+.work a {
+    position: absolute;
+    right: 0;
 }
