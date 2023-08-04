@@ -10,7 +10,7 @@ const Contact: React.FC<ContactProps> = (props) => {
 
   return (
     <div className={styles.contact}>
-      <h3>03.Contact</h3>
+      <h3>Contact</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
         tempor incididunt ut labore et dolore magna aliqua. Etiam tempor orci 

@@ -1,68 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import styles from './navbar.module.css';
+import { useHoverColorChange } from "../hooks/useHoverColorChange";
 
 interface NavbarProps{
     links: {name:string, url:string}[];
 }
 
 const Navbar : React.FC<NavbarProps> = ({ links }) => {
-const [scrolling, setScrolling] = useState(false);
-const [scrollDirection, setScrollDirection] = useState("up");
-let previousScrollY = 0
+    const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
 
-
-
-
-useEffect(() => {
     const handleScroll = () => {
-        const currentScrollY = window.scrollY ;
-        const isScrolling = window.scrollY > 10;
-        setScrolling(isScrolling);
+        const currentScrollPos = window.scrollY;
 
-        if (currentScrollY > previousScrollY){
-            setScrollDirection("down")
-        }else {
-            setScrollDirection("up")
-        }
+        setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos <  10);
 
-        setScrolling(isScrolling);
-        previousScrollY = currentScrollY
+        setPrevScrollPos(currentScrollPos);
     }
 
-    window.addEventListener("scroll", handleScroll);
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
 
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-    };
-},[])
-
-function changeColorInRed(event: React.MouseEvent<HTMLAnchorElement>){
-const linkElement = event.currentTarget;
-linkElement.style.color="#F29727";
-
-}
-
-function backToTheColor(event: React.MouseEvent<HTMLAnchorElement>){
-    const linkElement = event.currentTarget;
-    linkElement.style.color="";
+        return () => window.removeEventListener('scroll', handleScroll);
+    } ,[prevScrollPos, visible, handleScroll]);
     
-    }
-
-
-    return(
+    return (
         <header>
-           <nav className={`${styles.navLinks} ${scrolling ? styles.hidden : ""}`}>
+            <nav className={`${styles.navLinks}`} style={{ top: visible ? '0' : '-60px' }}>
                 <ul>
                     {links.map((link, index) => (
-                        
                         <li key={index}>
-                            
                             <a 
-                             href={link.url} 
-                             className={link.name === 'Resume' ? styles.resume : styles.a }
-                             onMouseOver={changeColorInRed}
-                             onMouseOut={backToTheColor}
-                             >{link.name}</a>
+                                href={link.url} 
+                                className={link.name === 'Resume' ? styles.resume : styles.a }
+                                onMouseOver={handleMouseOver}
+                                onMouseOut={handleMouseOut}
+                                style={{ color: isHover &&  (link.name === 'Resume' || link.name === '') ? "#F29727" : "" }}
+                            >
+                                {link.name}
+                            </a>
                         </li>
                     ))}
                 </ul>
@@ -71,4 +48,4 @@ function backToTheColor(event: React.MouseEvent<HTMLAnchorElement>){
     );
 };
 
-export default Navbar
+export default Navbar;

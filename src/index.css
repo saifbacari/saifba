@@ -29,7 +29,7 @@
     min-width: 320px;
     min-height: 9vh;
     background-color: #1D5B79;
-    padding-inline: 80px;
+    font-family: 'Quicksand', sans-serif;
   }
   
   h1 {
@@ -68,4 +68,13 @@
       background-color: #f9f9f9;
     }
   }
-  
+
+
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/quicksand/Quicksand-Bold.otf') format('opentype'),
+         url('./fonts/quicksand/Quicksand-Light.otf') format('opentype'),
+         url('./fonts/quicksand/Quicksand-Regular.otf') format('opentype'),
+         url('./fonts/quicksand/Quicksand_Dash.otf') format('opentype');
+}
