@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './contact.module.css';
+import '../SharedStyles/sharedStyles.css';
 
 interface ContactProps {
   // Définir les propriétés ici
@@ -19,7 +20,7 @@ const Contact: React.FC<ContactProps> = (props) => {
         vitae. Bibendum ut tristique et egestas quis ipsum. Convallis posuere 
         morbi leo urna molestie
       </p>
-      <button className={styles.buttonContact}>Contact God</button>
+      <button className="buttonOrange">Contact God</button>
     </div>
   );
 };

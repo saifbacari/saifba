@@ -4,6 +4,7 @@ import styles from "./work.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 
 const Work = () => {
@@ -12,14 +13,13 @@ const Work = () => {
     <div className={styles.work}>
       <Card className="header">
         <h3>02. Some Stuffs I Made</h3>
-        <FontAwesomeIcon icon={faPlay} />
         <hr />
       </Card>
       <ul className={styles.listProject}>
         <li className={styles.elementList}>
-            <a>link</a>
-          <h1>Projet A</h1>
-          <h2>Fonctionnalités effectuées</h2>
+            <a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
+          <h3>Projet A</h3>
+          <h4>Fonctionnalités effectuées</h4>
           <ul className={styles.stacksProject}>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Javascript</li>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>SQL</li>
@@ -27,9 +27,9 @@ const Work = () => {
           </ul>
         </li>
         <li className={styles.elementList}>
-            <a >link</a>
-          <h1>Projet B</h1>
-          <h2>Fonctionnalités effectuées</h2>
+            <a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
+          <h3>Projet B</h3>
+          <h4>Fonctionnalités effectuées</h4>
           <ul className={styles.stacksProject}>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>React JS</li>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>SQL</li>
@@ -37,9 +37,9 @@ const Work = () => {
           </ul>
         </li>
         <li className={styles.elementList}>
-          <a>link</a>
-          <h1>Projet C</h1>
-          <h2>Fonctionnalités effectuées</h2>
+          <a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
+          <h3>Projet C</h3>
+          <h4>Fonctionnalités effectuées</h4>
           <ul className={styles.stacksProject}>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Python</li>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Java</li>
@@ -47,8 +47,9 @@ const Work = () => {
           </ul>
         </li>
         <li className={styles.elementList}>
-          <h1>Projet D</h1>
-          <h2>Fonctionnalités effectuées</h2>
+         <a ><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
+          <h3>Projet D</h3>
+          <h4>Fonctionnalités effectuées</h4>
           <ul className={styles.stacksProject}>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Python</li>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Java</li>

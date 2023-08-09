@@ -5,7 +5,8 @@
 
 .work .listProject {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 221px;
     grid-gap: 21px;
     padding-left: 0px;
 }
@@ -14,8 +15,11 @@
     position: relative;
     border-radius: 4px;
     background-color: #247094 ;
-    height: 300px;
     list-style: none;
+}
+
+.work .elementList:last-child {
+padding-bottom: 25px;
 }
 
 .work .stacksProject {
@@ -24,6 +28,11 @@
 
 .work .faPlay {
     padding-right: 4px;
+}
+
+.work .faArrowUpRightFromSquare {
+    padding-right: 12px;
+    padding-top: 12px;
 }
 
 .work a {
