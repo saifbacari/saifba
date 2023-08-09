@@ -14,11 +14,11 @@ import styles from './app.module.css';
 
 const App: React.FC = () => {
   const links = [
-    {name:'1. About',url:''},
-    {name:'2. Experience',url:''},
-    {name:'3. Work',url:''},
-    {name:'4. Contact',url:''},
-    {name:'Resume',url:''},
+    {name:'1. About',url:'about'},
+    {name:'2. Experience',url:'experience'},
+    {name:'3. Work',url:'work'},
+    {name:'4. Contact',url:'contact'},
+    {name:'Resume',url:'resume'},
   ];
   return (
     <div className={styles.app}>
