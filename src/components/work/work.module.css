@@ -39,3 +39,13 @@ padding-bottom: 25px;
     position: absolute;
     right: 0;
 }
+
+/* mettre dans le shared styles file */
+
+.a {
+    color: #164961;
+  }
+
+  .a:hover {
+    color: #F29727;
+  }

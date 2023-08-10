@@ -4,11 +4,16 @@ header {
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width:100%;
     font-family: 'Figtree', sans-serif;
     backdrop-filter: blur(10px);
     position: absolute;
-    transition: 'top 0.6s';
+    box-shadow: #164961 0px 4px 0px 0px;
+    transition: top 0.3s ease-in-out; /* Transition de mouvement en douceur */
+    z-index: 1000; /* Assurez-vous que la navbar est en avant-plan */
   }
 
 
@@ -25,6 +30,7 @@ nav {
     display: inline-block;
     text-align: right;
     vertical-align: top;
+    padding-top: 0px;
 
   }
 
@@ -44,6 +50,10 @@ nav {
 
   .a {
     color: #C2DEDC;
+  }
+
+  .a:hover {
+    color: #F29727;
   }
 
   .a, li .resume {

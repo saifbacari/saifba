@@ -12,3 +12,14 @@
 .contact h3 {
     margin-left: 47%
 }
+
+/* mettre dans le shared styles file */
+
+
+.a {
+    color: #164961;
+  }
+
+  .a:hover {
+    color: #F29727;
+  }
