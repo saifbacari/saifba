@@ -1,11 +1,22 @@
 import React, { FC } from "react";
-import styles from './about.module.css';
-import Card from "../Cards/Card";
+import styles from '../components/About/about.module.css';
+import Card from "../components/Cards/Card";
 
-interface AboutProps {}
+interface AboutProps {
+    targetId: string,
+    name: string;
+}
 
-const About: FC<AboutProps> = () => {
-
+const About: React.FC<AboutProps> = ({targetId, name}) => {
+    const scrollToSectionHandler = () => {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                behavior: 'smooth',
+                top: targetElement.offsetTop,
+            });
+        };
+    }
 
     return (
         <div className={styles.about}>
@@ -29,13 +40,8 @@ const About: FC<AboutProps> = () => {
 
                     <p className={styles.titleStack}>Et harum quidem rerum facilis est et expedita distinctio :</p>
                     <ul className={styles.stacklist}>
-                        <div>
-                        
-                            <li>
-                            
-
-                                JavaScript
-                            </li>
+                        <div>                                           
+                            <li>JavaScript</li>
                             <li>Ruby on Rails</li>
                             <li>React</li>
                         </div>

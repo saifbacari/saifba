@@ -1,13 +1,12 @@
 import React, { useEffect, useState} from "react";
 import styles from './navbar.module.css';
+import { Link } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
 import ScrollToSectionContainer from "../Cards/ScrollToSectionContainer";
 
-interface NavbarProps{
-    links: {name:string, url:string}[];
-}
 
-const Navbar : React.FC<NavbarProps> = ({ links }) => {
+
+const Navbar : React.FC = () => {
     const scrollToSectionHandler = (targetId:string) => {
         const targetElement = document.getElementById(targetId);
             if (targetElement) {
@@ -40,26 +39,51 @@ const Navbar : React.FC<NavbarProps> = ({ links }) => {
         <header>
             <nav id='about' className={`${styles.navLinks}`} style={{ top: visible ? '0' : '-60px' }}>
                 <ul>
-                    {links.map((link, index) => (
-                        <li key={index}>
-                            <ScrollToSectionContainer 
-                            targetId={link.url}
-                            scrollFunction={() => scrollToSectionHandler(link.url)}
-                            >
-                            <a 
-                                href={link.url} 
-                                className={link.name === 'Resume' ? styles.resume : styles.a }
-                                onClick={() =>
-                                    scrollToSectionHandler(link.url)}
+                        <li>
+                                <Link 
+                                    to="#about" 
+                                    className={styles.a}
+                                    onMouseOver={handleMouseOver}
+                                    onMouseOut={handleMouseOut}
+                                    
+                                >
+                                    01. About
+                                </Link>
+
+                        </li>
+                        <li>
+                                <Link
+                                    to="/work"
+                                    className={styles.a}
+                                    onMouseOver={handleMouseOver}
+                                    onMouseOut={handleMouseOut}
+                                    
+                                >
+                                    02. Work
+                                </Link>
+                        </li>
+                        <li>
+                                <Link
+                                    to="#contact"
+                                    className={styles.a}
+                                    onMouseOver={handleMouseOver}
+                                    onMouseOut={handleMouseOut}
+                                    
+                                >
+                                    03. Contact
+                                </Link>
+                        </li>
+                        <li>
+                            <a
+                                href=""
+                                className={styles.resume}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
-                                style={{ color: isHover &&  (link.name === 'Resume' || link.name === '') ? "#F29727" : "" }}
+                                style={{ color: isHover ?  "#F29727" : "" }}
                             >
-                                {link.name}
+                                Resume
                             </a>
-                            </ScrollToSectionContainer>
                         </li>
-                    ))}
                 </ul>
             </nav>
         </header>

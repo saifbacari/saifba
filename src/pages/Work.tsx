@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../Cards/Card";
-import styles from "./work.module.css";
+import Card from "../components/Cards/Card";
+import styles from "../components/work/work.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { faPlay } from "@fortawesome/free-solid-svg-icons";

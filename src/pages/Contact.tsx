@@ -1,12 +1,11 @@
 import React from 'react';
-import styles from './contact.module.css';
-import '../SharedStyles/sharedStyles.css';
+import styles from '../components/Contact/contact.module.css';
+import '../components/SharedStyles/sharedStyles.css';
 
 interface ContactProps {
-  // Définir les propriétés ici
+  
 }
 
-// Définition du composant React
 const Contact: React.FC<ContactProps> = (props) => {
 
   return (
