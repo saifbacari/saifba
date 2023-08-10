@@ -3,7 +3,7 @@ import styles from '../components/About/about.module.css';
 import Card from "../components/Cards/Card";
 
 interface AboutProps {
-    targetId: string,
+    targetId: string;
     name: string;
 }
 

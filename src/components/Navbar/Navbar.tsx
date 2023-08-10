@@ -3,6 +3,15 @@ import styles from './navbar.module.css';
 import { Link } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
 import ScrollToSectionContainer from "../Cards/ScrollToSectionContainer";
+import NavItemAbout from "./NavItemAbout";
+import NavItemContact from "./NavItemContact";
+import NavItemWork from "./NavItemWork";
+import '../SharedStyles/sharedStyles.css'
+
+
+interface NavbarProps {
+    targetId: string
+}
 
 
 
@@ -39,39 +48,14 @@ const Navbar : React.FC = () => {
         <header>
             <nav id='about' className={`${styles.navLinks}`} style={{ top: visible ? '0' : '-60px' }}>
                 <ul>
-                        <li>
-                                <Link 
-                                    to="#about" 
-                                    className={styles.a}
-                                    onMouseOver={handleMouseOver}
-                                    onMouseOut={handleMouseOut}
-                                    
-                                >
-                                    01. About
-                                </Link>
-
+                        <li className={styles.a}>
+                            <NavItemAbout targetId="about" name="1. About"/>
                         </li>
-                        <li>
-                                <Link
-                                    to="/work"
-                                    className={styles.a}
-                                    onMouseOver={handleMouseOver}
-                                    onMouseOut={handleMouseOut}
-                                    
-                                >
-                                    02. Work
-                                </Link>
+                        <li className={styles.a}>
+                            <NavItemWork targetId="work" name="2. Work" />                 
                         </li>
-                        <li>
-                                <Link
-                                    to="#contact"
-                                    className={styles.a}
-                                    onMouseOver={handleMouseOver}
-                                    onMouseOut={handleMouseOut}
-                                    
-                                >
-                                    03. Contact
-                                </Link>
+                        <li className={styles.a}>
+                            <NavItemContact targetId ="contact" name="3. Contact"/>
                         </li>
                         <li>
                             <a
