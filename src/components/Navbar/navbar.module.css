@@ -1,25 +1,18 @@
-header {
+nav {
+  position: sticky;
+  top: 0;
+  font-family: 'Figtree', sans-serif;
+  backdrop-filter: blur(10px);
+  box-shadow: #164961 0px 4px 0px 0px;
   height: 75px;
-  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    font-family: 'Figtree', sans-serif;
-    backdrop-filter: blur(10px);
-    position: absolute;
-    box-shadow: #164961 0px 4px 0px 0px;
-    transition: top 0.3s ease-in-out; /* Transition de mouvement en douceur */
-    z-index: 1000; /* Assurez-vous que la navbar est en avant-plan */
-  }
-
-
+nav.hiddenNav {
+  transform: translateY(-100%);
+}
 
   nav ul {  
-    position: relative;
     right:0;
     float: right;
     margin-top: 24px;
@@ -32,11 +25,6 @@ nav {
     vertical-align: top;
     padding-top: 0px;
 
-  }
-
-  .navlinks {
-    /*test chatgpt pour defilement rapide */
-    transition: transform 0.3s ease-out;
   }
 
   

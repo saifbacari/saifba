@@ -18,6 +18,7 @@ const NavItemAbout : React.FC<NavItemAboutProps> = ({targetId, name}) => {
                 behavior: 'smooth',
                 top: targetElement.offsetTop,
             });
+
         };
 
     }
