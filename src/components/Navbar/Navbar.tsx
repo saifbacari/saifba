@@ -6,8 +6,9 @@ import ScrollToSectionContainer from "../Cards/ScrollToSectionContainer";
 import NavItemAbout from "./NavItemAbout";
 import NavItemContact from "./NavItemContact";
 import NavItemWork from "./NavItemWork";
-import '../SharedStyles/sharedStyles.css'
 
+
+import '../SharedStyles/sharedStyles.css'
 
 interface NavbarProps {
     targetId: string
@@ -27,26 +28,52 @@ const Navbar : React.FC = () => {
 
     }
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [visible, setVisible] = useState(true);
+    const [scrollData, setScrollData] = useState({
+        y:0,
+        lastY: 0
+    });
 
-    const handleScroll = () => {
-        const currentScrollPos = window.scrollY;
+    const [showNav, setShowNav] = useState(true);
 
-        setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 70) || currentScrollPos <  10);
+     
 
-        setPrevScrollPos(currentScrollPos);
-    }
+    useEffect(() =>{
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        const handleScroll = () => {
+            setScrollData(prevState => {
+                return {
+                    y: window.scrollY,
+                    lastY: prevState.y
+                }
+            })
+        }
+        window.addEventListener('scroll', handleScroll );
 
-        return () => window.removeEventListener('scroll', handleScroll);
-    } ,[prevScrollPos, visible, handleScroll]);
+    },[])
+
+   
+       
+
+        useEffect(() => {
+            if (scrollData.y > 500){
+                setShowNav(true);
+            }else{
+                setShowNav(false);
+            }
+
+            if (scrollData.lastY > scrollData.y){
+                setShowNav(false);
+            }else{
+                setShowNav(true);
+            }
+
+    
+
+        },[scrollData])
     
     return (
-        <header>
-            <nav id='about' className={`${styles.navLinks}`} style={{ top: visible ? '0' : '-60px' }}>
+      
+            <nav id='about' className={`${showNav ? styles.hiddenNav : ''} ${styles.navLinks}`}>
                 <ul>
                         <li className={styles.a}>
                             <NavItemAbout targetId="about" name="1. About"/>
@@ -70,7 +97,7 @@ const Navbar : React.FC = () => {
                         </li>
                 </ul>
             </nav>
-        </header>
+    
     );
 };
 
