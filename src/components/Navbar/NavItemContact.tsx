@@ -1,44 +1,43 @@
-import React from "react";
-import ScrollToSectionContainer from "../Cards/ScrollToSectionContainer";
-import styles from '../Contact/contact.module.css'
+import React, { useRef, MutableRefObject } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import styles from '../Contact/contact.module.css';
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
-
 
 interface NavItemContactProps {
     targetId: string;
     name: string;
+    contactRef: React.MutableRefObject<HTMLElement | null>
+
 }
 
-
-const NavItemContact : React.FC<NavItemContactProps> = ({targetId, name}) => {
-    const scrollToSectionHandler = () => {
-        const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-            window.scrollTo({
-                behavior: 'smooth',
-                top: targetElement.offsetTop,
-            });
-        };
-
-    }
+const NavItemContact: React.FC<NavItemContactProps> = ({ targetId, name, contactRef }) => {
 
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
 
+    const linkRef = useRef<HTMLAnchorElement | null>(null);
+
+    const handleScroll = () => {
+        if (contactRef.current) {
+            window.scrollTo({
+                top: contactRef.current.offsetTop,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+    };
 
     return (
-        <ScrollToSectionContainer targetId={targetId} scrollFunction={scrollToSectionHandler}>
-            <a
-                href={`${targetId}`}
-                className={styles.a}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-            >
+        <Link
+            ref={linkRef}
+            to={`${targetId}`}
+            className={styles.a}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            onClick={() =>{handleScroll()}} 
+        >
             {name}
-            </a>
-        </ScrollToSectionContainer>
-
-
-    )
+        </Link>
+    );
 }
 
-export default NavItemContact
+export default NavItemContact;

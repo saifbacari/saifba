@@ -1,15 +1,23 @@
-import React from 'react';
-import styles from '../components/Contact/contact.module.css';
-import '../components/SharedStyles/sharedStyles.css';
+import React, { useRef } from "react";
+import Card from "../Cards/Card";
+import Navbar from "../Navbar/Navbar";
+import Hero from "../Hero/Hero";
+import Work from "../work/Work";
+import styles from './contact.module.css';
+
+
 
 interface ContactProps {
-  
+  aboutRef: React.MutableRefObject<null>
+  workRef: React.MutableRefObject<null>
+  contactRef: React.MutableRefObject<null>
 }
 
-const Contact: React.FC<ContactProps> = (props) => {
+const Contact: React.FC<ContactProps> = ({aboutRef, contactRef, workRef}) => {
 
   return (
-    <div className={styles.contact}>
+    <div className={styles.contact} ref={contactRef}>
+
       <h3>Contact</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 

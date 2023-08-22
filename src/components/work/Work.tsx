@@ -1,16 +1,28 @@
-import React from "react";
-import Card from "../components/Cards/Card";
-import styles from "../components/work/work.module.css";
+import React, { MutableRefObject } from "react";
+import Card from "../Cards/Card";
+import Navbar from "../Navbar/Navbar";
+import About from "../About/About";
+import Hero from "../Hero/Hero";
+import Contact from "../Contact/Contact";
+import styles from "./work.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 
-const Work = () => {
+
+interface WorkProps {
+  aboutRef: React.MutableRefObject<null>
+  workRef: React.MutableRefObject<null>
+  contactRef: React.MutableRefObject<null>
+}
+
+const Work : React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
 
   return (
-    <div className={styles.work}>
+    
+    <div className={styles.work} ref={workRef}>
       <Card className="header">
         <h3>02. Some Stuffs I Made</h3>
         <hr />
@@ -60,5 +72,6 @@ const Work = () => {
     </div>
   );
 };
+
 
 export default Work;

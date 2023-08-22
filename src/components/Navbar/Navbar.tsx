@@ -1,36 +1,28 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState, useRef, MutableRefObject } from "react";
 import styles from './navbar.module.css';
 import { Link } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
-import ScrollToSectionContainer from "../Cards/ScrollToSectionContainer";
 import NavItemAbout from "./NavItemAbout";
 import NavItemContact from "./NavItemContact";
 import NavItemWork from "./NavItemWork";
-
-
 import '../SharedStyles/sharedStyles.css'
+import About from "../About/About";
+
 
 interface NavbarProps {
-    targetId: string
+    targetId: string;
+    contactRef: React.MutableRefObject<null>;
+    workRef: React.MutableRefObject<null>;
+    aboutRef: React.MutableRefObject<null>;
 }
 
 
+const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
 
-const Navbar : React.FC = () => {
-    const scrollToSectionHandler = (targetId:string) => {
-        const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-            window.scrollTo({
-                behavior: 'smooth',
-                top: targetElement.offsetTop,
-            });
-        };
-
-    }
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
     const [scrollData, setScrollData] = useState({
         y:0,
-        lastY: 0
+        lastY: 0,
     });
 
     const [showNav, setShowNav] = useState(true);
@@ -73,27 +65,27 @@ const Navbar : React.FC = () => {
     
     return (
       
-            <nav id='about' className={`${showNav ? styles.hiddenNav : ''} ${styles.navLinks}`}>
+            <nav id='about'className={`${showNav ? styles.hiddenNav : ''} ${styles.navLinks}`}>
                 <ul>
                         <li className={styles.a}>
-                            <NavItemAbout targetId="about" name="1. About"/>
+                            <NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" />
                         </li>
                         <li className={styles.a}>
-                            <NavItemWork targetId="work" name="2. Work" />                 
+                            <NavItemWork workRef={workRef} targetId="work" name="2. Work"/>                 
                         </li>
                         <li className={styles.a}>
-                            <NavItemContact targetId ="contact" name="3. Contact"/>
+                            <NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/>
                         </li>
                         <li>
-                            <a
-                                href=""
+                            <Link
+                                to=""
                                 className={styles.resume}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
                                 style={{ color: isHover ?  "#F29727" : "" }}
                             >
                                 Resume
-                            </a>
+                            </Link>
                         </li>
                 </ul>
             </nav>
