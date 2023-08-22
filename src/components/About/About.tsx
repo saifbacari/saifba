@@ -1,26 +1,21 @@
-import React, { FC } from "react";
-import styles from '../components/About/about.module.css';
-import Card from "../components/Cards/Card";
+import React, { useRef } from "react";
+import styles from './about.module.css';
+import Card from "../Cards/Card";
+import Navbar from "../Navbar/Navbar";
+import Hero from "../Hero/Hero";
+import Work from "../work/Work";
+import Contact from "../Contact/Contact";
 
 interface AboutProps {
-    targetId: string;
-    name: string;
+   aboutRef: React.MutableRefObject<null>
+   contactRef: React.MutableRefObject<null>
+   workRef: React.MutableRefObject<null>
 }
-
-const About: React.FC<AboutProps> = ({targetId, name}) => {
-    const scrollToSectionHandler = () => {
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                behavior: 'smooth',
-                top: targetElement.offsetTop,
-            });
-        };
-    }
-
+const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
+ 
     return (
-        <div className={styles.about}>
-             <Card className="header">
+        <div className={styles.about} id="about" ref={aboutRef}>
+             <Card className="header" >
                 <h3>01. About Me</h3>
                 <hr/>
              </Card>
@@ -52,8 +47,7 @@ const About: React.FC<AboutProps> = ({targetId, name}) => {
                         </div>
                     </ul>
               </div>
-
-         </div>    
+         </div>     
     )
 }
 

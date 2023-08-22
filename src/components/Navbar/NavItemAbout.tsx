@@ -1,44 +1,40 @@
 import React from "react";
-import ScrollToSectionContainer from "../Cards/ScrollToSectionContainer";
+import { Link } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
-import styles from '../About/about.module.css'
-
+import styles from '../About/about.module.css';
 
 interface NavItemAboutProps {
     targetId: string;
     name: string;
+    aboutRef: React.MutableRefObject<HTMLElement | null>;
 }
 
+const NavItemAbout : React.FC<NavItemAboutProps> = ({ targetId, name, aboutRef }) => {
+    const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
 
-const NavItemAbout : React.FC<NavItemAboutProps> = ({targetId, name}) => {
-    const scrollToSectionHandler = () => {
-        const targetElement = document.getElementById(targetId);
-            if (targetElement) {
+    const handleScroll = () => {
+        if (aboutRef.current) {
             window.scrollTo({
-                behavior: 'smooth',
-                top: targetElement.offsetTop,
+                top: aboutRef.current.offsetTop,
+                left: 0,
+                behavior: "smooth",
             });
+        }
+    };
 
-        };
-
-    }
-
-const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
-
-    return(
-        <ScrollToSectionContainer targetId={targetId} scrollFunction={scrollToSectionHandler}>
-                <a 
-                    href={`#${targetId}`}
-                    className={styles.a}
-                    onClick={scrollToSectionHandler}
-                    onMouseOver={handleMouseOver}
-                    onMouseOut={handleMouseOut}   
-                >
+    return (
+        <div>
+            <Link 
+                to={`#${targetId}`}
+                className={styles.a}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                onClick={() =>{handleScroll()}} // Utilisez la fonction de défilement ici
+            >
                 {name}
-                </a>
-        </ScrollToSectionContainer>
-
-    )
+            </Link>
+        </div>
+    );
 }
 
 export default NavItemAbout;
