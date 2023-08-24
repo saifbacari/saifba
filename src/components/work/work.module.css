@@ -12,10 +12,19 @@
 }
 
 .work .elementList {
-    position: relative;
+    display: relative;
     border-radius: 4px;
-    background-color: #247094 ;
+    background-color: hsl(199, 61%, 36%) ;
     list-style: none;
+    padding-left:25px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+.h3ElementList {
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 .work .elementList:last-child {
@@ -24,21 +33,26 @@ padding-bottom: 25px;
 
 .work .stacksProject {
     list-style: none;
+    padding-left: 13px;
 }
 
 .work .faPlay {
     padding-right: 4px;
 }
 
-.work .faArrowUpRightFromSquare {
+.faArrowUpRightFromSquare {
     padding-right: 12px;
     padding-top: 12px;
 }
 
 .work a {
-    position: absolute;
-    right: 0;
+    left:90%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
 }
+
+
 
 /* mettre dans le shared styles file */
 
