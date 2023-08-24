@@ -2,7 +2,7 @@ nav {
   position: sticky;
   top: 0;
   font-family: 'Figtree', sans-serif;
-  backdrop-filter: blur(10px);
+  background-color: #1D5B79;
   box-shadow: #164961 0px 4px 0px 0px;
   height: 75px;
   transition: transform 0.3s ease-in-out;

@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
         lastY: 0,
     });
 
-    const [showNav, setShowNav] = useState(true);
+    const [showNav, setShowNav] = useState(false);
 
      
 
@@ -53,19 +53,18 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
                 setShowNav(false);
             }
 
-            if (scrollData.lastY > scrollData.y){
+            if (scrollData.lastY < scrollData.y){
                 setShowNav(false);
             }else{
                 setShowNav(true);
             }
 
-    
 
         },[scrollData])
     
     return (
       
-            <nav id='about'className={`${showNav ? styles.hiddenNav : ''} ${styles.navLinks}`}>
+            <nav id='about'className={`${showNav ? styles.navLinks : styles.hiddenNav } ${styles.navLinks}`}>
                 <ul>
                         <li className={styles.a}>
                             <NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" />

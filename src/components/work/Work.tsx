@@ -29,9 +29,9 @@ const Work : React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
       </Card>
       <ul className={styles.listProject}>
         <li className={styles.elementList}>
-            <a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
-          <h3>Projet A</h3>
-          <h4>Fonctionnalités effectuées</h4>
+            
+          <h3 className={styles.h3ElementList}><a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>Projet A</h3>
+          <h4>Fonctionnalités effectuées:</h4>
           <ul className={styles.stacksProject}>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Javascript</li>
             <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>SQL</li>
@@ -39,33 +39,32 @@ const Work : React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
           </ul>
         </li>
         <li className={styles.elementList}>
-            <a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
-          <h3>Projet B</h3>
-          <h4>Fonctionnalités effectuées</h4>
+            
+          <h3 className={styles.h3ElementList}><a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>Projet B</h3>
+          <h4>Fonctionnalités effectuées :</h4>
           <ul className={styles.stacksProject}>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>React JS</li>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>SQL</li>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Typescript</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   React JS</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   SQL</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   Typescript</li>
           </ul>
         </li>
         <li className={styles.elementList}>
-          <a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
-          <h3>Projet C</h3>
-          <h4>Fonctionnalités effectuées</h4>
+          
+          <h3 className={styles.h3ElementList}><a><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>Projet C</h3>
+          <h4>Fonctionnalités effectuées :</h4>
           <ul className={styles.stacksProject}>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Python</li>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Java</li>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>C++</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   Python</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   Java</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   C++</li>
           </ul>
         </li>
-        <li className={styles.elementList}>
-         <a ><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>
-          <h3>Projet D</h3>
-          <h4>Fonctionnalités effectuées</h4>
+        <li className={styles.elementList}>        
+          <h3 className={styles.h3ElementList}><a ><FontAwesomeIcon icon={faArrowUpRightFromSquare} className={styles.faArrowUpRightFromSquare}/></a>Projet D</h3>
+          <h4>Fonctionnalités effectuées :</h4>
           <ul className={styles.stacksProject}>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Python</li>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>Java</li>
-            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>C++</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   Python</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   Java</li>
+            <li><FontAwesomeIcon icon={faPlay} className={styles.faPlay}/>   C++</li>
           </ul>
         </li>
       </ul>
