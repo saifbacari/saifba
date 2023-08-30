@@ -6,6 +6,7 @@ import Work from '../components/work/Work';
 import Contact from '../components/Contact/Contact';
 import styles from '../app.module.css'
 
+
 interface MainPageProps {
     aboutRef: React.MutableRefObject<null>
     contactRef: React.MutableRefObject<null>
@@ -14,13 +15,13 @@ interface MainPageProps {
 }
 
 const MainPage: React.FC<MainPageProps> = ({aboutRef,contactRef,workRef,targetId}) => (
-  <div>
-    <Navbar aboutRef={aboutRef} workRef={workRef} contactRef={contactRef} targetId={targetId} />
-    <Hero />
-    <About aboutRef={aboutRef} workRef={workRef} contactRef={contactRef} />
-    <Work workRef={workRef} aboutRef={aboutRef} contactRef={contactRef} />
-    <Contact aboutRef={aboutRef} contactRef={contactRef} workRef={workRef} />
-  </div>
+          <div>
+            <Navbar aboutRef={aboutRef} workRef={workRef} contactRef={contactRef} targetId={targetId} />
+            <Hero />
+            <About aboutRef={aboutRef} workRef={workRef} contactRef={contactRef} />
+            <Work workRef={workRef} aboutRef={aboutRef} contactRef={contactRef} />
+            <Contact aboutRef={aboutRef} contactRef={contactRef} workRef={workRef} />
+         </div>
 );
 
 export default MainPage;

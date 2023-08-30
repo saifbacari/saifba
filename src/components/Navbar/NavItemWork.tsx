@@ -12,7 +12,6 @@ interface NavItemWorkProps {
 
 const NavItemWork: React.FC<NavItemWorkProps> = ({targetId, name, workRef}) =>{
 
-
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
     const linkRef = useRef<HTMLAnchorElement | null>(null);
 
@@ -26,21 +25,20 @@ const NavItemWork: React.FC<NavItemWorkProps> = ({targetId, name, workRef}) =>{
         }
     };
 
-
     return (
-        <div>
-            <Link
-                to={`#${targetId}`}
-                ref={linkRef}
-                className={styles.a}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-                onClick={() =>{handleScroll()}} 
-                >
-                2. Work
-            </Link>
+        <div >
+            <section ref={linkRef}>
+                <Link
+                    to={`#${targetId}`}   
+                    className={styles.a}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                    onClick={() =>{handleScroll()}} 
+                    >
+                    2. Work
+                </Link>
+            </section>
         </div>
-
     )
 }
 

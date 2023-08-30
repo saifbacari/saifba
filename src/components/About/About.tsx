@@ -5,6 +5,9 @@ import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Work from "../work/Work";
 import Contact from "../Contact/Contact";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 interface AboutProps {
    aboutRef: React.MutableRefObject<null>
@@ -17,8 +20,9 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
         <div className={styles.about} id="about" ref={aboutRef}>
              <Card className="header" >
                 <h3>01. About Me</h3>
-                <hr/>
+                <hr className={styles.hr}/>
              </Card>
+             
              <div className={styles.content}>
                 <p className={styles.p}>
                         Nulla pellentesque et enim vel condimentum. 
@@ -36,14 +40,14 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
                     <p className={styles.titleStack}>Et harum quidem rerum facilis est et expedita distinctio :</p>
                     <ul className={styles.stacklist}>
                         <div>                                           
-                            <li>JavaScript</li>
-                            <li>Ruby on Rails</li>
-                            <li>React</li>
+                            <li><FontAwesomeIcon icon={faChevronRight} className={styles.faChevronRight}/> JavaScript</li>
+                            <li><FontAwesomeIcon icon={faChevronRight} className={styles.faChevronRight}/> Ruby on Rails</li>
+                            <li><FontAwesomeIcon icon={faChevronRight} className={styles.faChevronRight}/> React</li>
                         </div>
                         <div>
-                            <li>TypeScript</li>
-                            <li>HTML/CSS</li>
-                            <li>SQL</li>
+                            <li><FontAwesomeIcon icon={faChevronRight} className={styles.faChevronRight}/> TypeScript</li>
+                            <li><FontAwesomeIcon icon={faChevronRight} className={styles.faChevronRight}/> HTML/CSS</li>
+                            <li><FontAwesomeIcon icon={faChevronRight} className={styles.faChevronRight}/> SQL</li>
                         </div>
                     </ul>
               </div>

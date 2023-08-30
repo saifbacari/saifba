@@ -25,7 +25,7 @@ const Work : React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
     <div className={styles.work} ref={workRef}>
       <Card className="header">
         <h3>02. Some Stuffs I Made</h3>
-        <hr />
+        <hr className={styles.hr} />
       </Card>
       <ul className={styles.listProject}>
         <li className={styles.elementList}>

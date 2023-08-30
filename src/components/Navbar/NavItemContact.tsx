@@ -29,7 +29,7 @@ const NavItemContact: React.FC<NavItemContactProps> = ({ targetId, name, contact
     return (
         <Link
             ref={linkRef}
-            to={`${targetId}`}
+            to={`#${targetId}`}
             className={styles.a}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
