@@ -27,7 +27,9 @@ const Contact: React.FC<ContactProps> = ({aboutRef, contactRef, workRef}) => {
         vitae. Bibendum ut tristique et egestas quis ipsum. Convallis posuere 
         morbi leo urna molestie
       </p>
-      <button className="buttonOrange">Contact God</button>
+      <button className="buttonOrange" onClick={() => window.location.href = "mailto:saifbacari@gmail.com"}>
+        Contactez-moi
+      </button>
     </div>
   );
 };

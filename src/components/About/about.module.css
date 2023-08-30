@@ -15,10 +15,14 @@
     width: 78%;
     object-fit: cover;
     width: 100%;
-
+    margin-top: 21px;
   }
 
+ .hr {
+    flex: 0.39;
+  } 
 
+  
   .titleStack {
     display: contents;
   }
