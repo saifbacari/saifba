@@ -1,27 +1,33 @@
 .contact {
+    display: flex;
     flex-direction: column;
     margin-top: 55px;
     padding-bottom: 25px;
-    height: 1000px;
+    height: 500px;
     padding-top: 12px;
-}
-
-
-.contact button {
-    margin-left: 45%;
+    align-items: center;
+    padding: 126px;
 }
 
 .contact h3 {
-    margin-left: 47%
+    color: #CCD6F6;
 }
 
-/* mettre dans le shared styles file */
-
-
-.a {
-    color: #164961;
-  }
+.contact p {
+    color: #CCD6F6;
+}
 
   .a:hover {
     color: #F29727;
   }
+
+  @media only screen and (max-width: 600px){
+    .contact  {
+        padding: 40px;
+    }     
+      }
+  @media only screen and (min-width: 600px){
+        .contact  {
+            padding-inline: 80px;
+        }
+      }

@@ -7,6 +7,7 @@ import Work from "../work/Work";
 import Contact from "../Contact/Contact";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../../app.module.css';
 
 
 interface AboutProps {
@@ -24,7 +25,7 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
              </Card>
              
              <div className={styles.content}>
-                <p className={styles.p}>
+                <p>
                         Nulla pellentesque et enim vel condimentum. 
                         Vivamus tempor, augue id ornare feugiat, magna
                         lacus luctus nibh, id efficitur risus diam nec nisl. 

@@ -3,12 +3,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 66px;
+
   }
 
   .content p {
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
-    font-size: 16px
+    font-size: 16px;
+    color: #CCD6F6;
   }
 
   .content img {
@@ -32,6 +34,7 @@
     grid-template-columns: 1fr 1fr;
     grid-gap:16px;
     list-style: none;
+    color: #CCD6F6;
   }
 
   /* mettre dans le shared styles file */
@@ -44,3 +47,19 @@
   .a:hover {
     color: #F29727;
   }
+
+  @media only screen and (max-width: 600px){
+    .content  {
+        padding-inline: 40px;
+        display: block;
+    }
+        
+      }
+      
+      @media only screen and (min-width: 600px){
+        .about  {
+            padding-inline: 80px;
+        }
+        
+      }
+  

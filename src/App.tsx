@@ -10,6 +10,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import styles from './app.module.css'
+import './index.css';
 
 const App: React.FC = () => {
   const aboutRef = useRef(null); // Assurez-vous de l'initialiser correctement

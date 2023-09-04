@@ -30,10 +30,11 @@ const NavItemContact: React.FC<NavItemContactProps> = ({ targetId, name, contact
         <Link
             ref={linkRef}
             to={`#${targetId}`}
-            className={styles.a}
+            className={styles.navLink}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             onClick={() =>{handleScroll()}} 
+            style={{ color: isHover ?  "#F29727" : "" }}
         >
             {name}
         </Link>

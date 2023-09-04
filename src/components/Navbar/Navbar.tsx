@@ -6,7 +6,7 @@ import Wrapper from "../../helpers/Wrapper";
 import NavItemAbout from "./NavItemAbout";
 import NavItemContact from "./NavItemContact";
 import NavItemWork from "./NavItemWork";
-import '../SharedStyles/sharedStyles.css'
+import '../SharedStyles/sharedStyles.css';
 import About from "../About/About";
 
 
@@ -81,13 +81,13 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
             <nav id='about'className={`${showNav ? styles.navLinks : styles.hiddenNav } ${styles.navLinks}`}>
         
                 <ul>
-                        <li className={styles.a}>
+                        <li className={styles.navLink}>
                             <NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" />
                         </li>
-                        <li className={styles.a}>
+                        <li className={styles.navLink}>
                             <NavItemWork workRef={workRef} targetId="work" name="2. Work"/>                 
                         </li>
-                        <li className={styles.a}>
+                        <li className={styles.navLink}>
                             <NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/>
                         </li>
                         <li>
@@ -103,9 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
                         </li>
                 </ul>
             </nav>    
-        </>
-
-    
+        </>  
     );
 };
 
