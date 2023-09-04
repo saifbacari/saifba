@@ -2,8 +2,9 @@ nav {
   position: sticky;
   top: 0;
   font-family: 'Figtree', sans-serif;
-  background-color: #1D5B79;
-  box-shadow: #164961 0px 4px 0px 0px;
+  padding-inline: 46px;
+  box-shadow: 1px 0px 25px 10px #10303f;
+  backdrop-filter: blur(8px);
   height: 75px;
   transition: transform 0.3s ease-in-out;
 }
@@ -36,15 +37,16 @@ nav.hiddenNav {
       margin-left: 15px;
     }
 
-  .a {
-    color: #C2DEDC;
-  }
 
-  .a:hover {
+  .navLink:hover {
     color: #F29727;
   }
 
-  .a, li .resume {
+  .navLink {
+    color: aquamarine;
+  }
+
+  .navLink, li .resume {
       text-decoration: none;
       padding: 0.5rem;
 
@@ -73,6 +75,7 @@ nav.hiddenNav {
     cursor: pointer;
     margin-right: auto; /* Déplace le burger menu tout à droite */
     font-size: 50px;
+    padding-right: 30px;
   }
 
   .menuResponsive .ol {
@@ -81,7 +84,6 @@ nav.hiddenNav {
   }
 
   .menuResponsive .open {
-    display: block;
     width: 100%;
   }
 
@@ -100,10 +102,4 @@ nav.hiddenNav {
     display: none;
   }
 
-  .menuResponsive .hamMenu {
-    justify-content: flex-end;
-  }
-
-
-  
 }

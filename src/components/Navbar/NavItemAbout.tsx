@@ -26,10 +26,11 @@ const NavItemAbout : React.FC<NavItemAboutProps> = ({ targetId, name, aboutRef }
         <div>
             <Link 
                 to={`#${targetId}`}
-                className={styles.a}
+                className={styles.navLink}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 onClick={() =>{handleScroll()}} // Utilisez la fonction de défilement ici
+                style={{ color: isHover ?  "#F29727" : "" }}
             >
                 {name}
             </Link>

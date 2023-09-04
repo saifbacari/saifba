@@ -30,10 +30,11 @@ const NavItemWork: React.FC<NavItemWorkProps> = ({targetId, name, workRef}) =>{
             <section ref={linkRef}>
                 <Link
                     to={`#${targetId}`}   
-                    className={styles.a}
+                    className={styles.navLink}
                     onMouseOver={handleMouseOver}
                     onMouseOut={handleMouseOut}
                     onClick={() =>{handleScroll()}} 
+                    style={{ color: isHover ?  "#F29727" : "" }}
                     >
                     2. Work
                 </Link>
