@@ -29,5 +29,6 @@
   @media only screen and (min-width: 600px){
         .contact  {
             padding-inline: 80px;
+            padding-top: 186px;
         }
       }

@@ -19,10 +19,19 @@ interface NavbarProps {
 
 
 const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
+
+//effect & state for navbar responsive//
+    const [navbarVisible, setNavbarVisible] = useState(true);
+
+    const [prevScrollPos, setProvScrollPos] = useState(0);
+
+
     
     const [navbarExpanded, setNavbarExpanded] = useState(false);
 
-    const navbExp = navbarExpanded ? "open" : ""
+    const navbExp = navbarExpanded ? "open" : "";
+
+//effects & state for standard navbar//
 
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
     const [scrollData, setScrollData] = useState({
@@ -30,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
         lastY: 0,
     });
 
-    const [showNav, setShowNav] = useState(false);
+    const [showNav, setShowNav] = useState(true);
 
      
 
@@ -66,12 +75,20 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
 
 
         },[scrollData])
+
+        useEffect(() => {
+            if (scrollData.y > scrollData.lastY ){
+                setShowNav(false);
+            } else {
+                setShowNav(true);
+            }
+        },[scrollData]);
     
     return (
         <>
-            <div className={styles.menuResponsive}>
-                <a href="#menu" onClick={() => {setNavbarExpanded(!navbarExpanded)}}><img className={styles.hamMenu}src="src/assets/images/ham-menu.png" alt="menu" /></a>
-                <ol className={`${styles.ol} ${navbarExpanded ? styles.open : ""}`} >
+            <div className={`${showNav ? styles.menuResponsive : styles.closed} ${styles.menuResponsive }`} >
+                <a href="#menu" className={styles.a} onClick={() => {setNavbarExpanded(!navbarExpanded)}}><img className={styles.hamMenu}src="src/assets/images/ham-menu.png" alt="menu" /></a>
+                <ol className={`${styles.ol} ${navbarExpanded ? styles.open : styles.closed}`} >
                     <li className={styles.li}><NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" /></li>
                     <li className={styles.li}><NavItemWork workRef={workRef} targetId="work" name="2. Work"/></li>
                     <li className={styles.li}><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/></li>
