@@ -68,23 +68,44 @@ nav.hiddenNav {
       justify-content: flex-end;
       flex-direction: column;
       align-items: end;
-      width: 100%;
+      padding-inline: 40px;
+      position: fixed;
+      padding-top: 9px;
+      width: 67%;
+      
+  }
+
+  .menuResponsive .ol {
+      margin-top: 54px;
   }
 
   .menuResponsive .hamMenu {
     cursor: pointer;
-    margin-right: auto; /* Déplace le burger menu tout à droite */
+    margin-right: 0; /* Déplace le burger menu tout à droite */
     font-size: 50px;
-    padding-right: 30px;
+    position: fixed; 
+    padding-right: 40px;
+    width:42px;
+
   }
 
-  .menuResponsive .ol {
-    width: 100%;
-    display: none;
+  .a {
+    padding-left: 39px;
   }
+
+ 
 
   .menuResponsive .open {
     width: 100%;
+  }
+
+  .closed {
+    display: none;
+    
+  }
+
+  .hidden {
+    display:none;
   }
 
   .menuResponsive .li {
@@ -93,6 +114,7 @@ nav.hiddenNav {
     border: solid 1px black;
     background-color: aquamarine;
     text-align: center;
+   
   }
 }
 
@@ -101,5 +123,7 @@ nav.hiddenNav {
     visibility: hidden;
     display: none;
   }
+
+
 
 }
