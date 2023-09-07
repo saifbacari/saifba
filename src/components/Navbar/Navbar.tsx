@@ -21,15 +21,15 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
 
 //effect & state for navbar responsive//
-    const [navbarVisible, setNavbarVisible] = useState(true);
+    //const [navbarVisible, setNavbarVisible] = useState(true);
 
-    const [prevScrollPos, setProvScrollPos] = useState(0);
+    //const [prevScrollPos, setProvScrollPos] = useState(0);
 
-
-    
     const [navbarExpanded, setNavbarExpanded] = useState(false);
 
     const navbExp = navbarExpanded ? "open" : "";
+
+
 
 //effects & state for standard navbar//
 
@@ -94,7 +94,8 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
                     <li className={styles.li}><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/></li>
                 </ol>
              </div>
-            
+   
+
             <nav id='about'className={`${showNav ? styles.navLinks : styles.hiddenNav } ${styles.navLinks}`}>
         
                 <ul>
