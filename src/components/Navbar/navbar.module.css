@@ -36,7 +36,11 @@ nav.hiddenNav {
       border-radius: 5px;
       margin-left: 15px;
     }
-
+  
+  li .resumePdf{
+      display: none;
+      
+  }
 
   .navLink:hover {
     color: #F29727;
@@ -55,6 +59,8 @@ nav.hiddenNav {
 .resume:hover{
   background-color: rgba(255, 83, 13, 0.1); 
 }
+
+
 
 @media only screen and (max-width: 600px){
   nav {
@@ -90,12 +96,13 @@ nav.hiddenNav {
 
 
   .menuResponsive .ol {
-      margin-top: 54px;
+      
+      text-align: center;
   }
 
   
 
-  .menuResponsive .hamMenu {
+  .menuResponsive .iconBurger {
     cursor: pointer;
     margin-right: 0; 
     font-size: 50px;
@@ -104,17 +111,44 @@ nav.hiddenNav {
     
   }
 
-  .a {
-    padding-left: 39px;
+  .a .iconBurger .line {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 5px;
+    border-radius: 5px;
+  }
+
+  
+
+  .menuResponsive .a {
+      padding-top: 38px;
+      padding-right: 30px;
   }
 
  
 
   .menuResponsive .open {
-    width: 100%;
+    width: 80%;
     transform: translateX(calc(0%));
     display: block;
+    backdrop-filter: 20%;
   }
+
+  .menuResponsive .open .line {
+    transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
+  }
+  .menuResponsive .open .line:nth-child(1) {
+    transform: translateY(9px) rotate(50deg);
+  }
+  .menuResponsive .open .line:nth-child(2) {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  .menuResponsive .open .line:nth-child(3) {
+    transform: translateY(-9px) rotate(-50deg);
+  }
+
 
   .closed {
     display: none;
@@ -125,14 +159,14 @@ nav.hiddenNav {
   }
 
   .menuResponsive .li {
-    height: 50px;
+    height: 100px;
     list-style: none;
-    border: solid 1px black;
+    padding-top: 40px;
     background-color: aquamarine;
-    text-align: center;
-   
   }
 }
+
+
 
 @media only screen and (min-width: 600px){
   .menuResponsive {

@@ -6,8 +6,15 @@ import Wrapper from "../../helpers/Wrapper";
 import NavItemAbout from "./NavItemAbout";
 import NavItemContact from "./NavItemContact";
 import NavItemWork from "./NavItemWork";
+
 import '../SharedStyles/sharedStyles.css';
 import About from "../About/About";
+import resume from '../../utils/Resume.pdf';
+import {  Document, Page, pdfjs } from 'react-pdf';
+import ReactPDF from '@react-pdf/renderer';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+
 
 
 interface NavbarProps {
@@ -15,11 +22,20 @@ interface NavbarProps {
     contactRef: React.MutableRefObject<null>;
     workRef: React.MutableRefObject<null>;
     aboutRef: React.MutableRefObject<null>;
+    
 }
 
 
 const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
+ //logique react-pdf //
+ const [numPages, setNumPages] = useState(null);
+ const [pageNumber, setPageNumber] = useState(1);
 
+ function onDocumentLoadSuccess ({}) {
+    setNumPages(numPages);
+    setPageNumber(1);
+ }
+   
 //effect & state for navbar responsive//
     //const [navbarVisible, setNavbarVisible] = useState(true);
 
@@ -28,6 +44,8 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
     const [navbarExpanded, setNavbarExpanded] = useState(false);
 
     const navbExp = navbarExpanded ? "open" : "";
+
+    const [crossMenu, setCrossMenu ] = useState(false);
 
 
 
@@ -87,8 +105,14 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
     return (
         <>
             <div className={`${showNav ? styles.menuResponsive : styles.closed} ${styles.menuResponsive }`} >
-                <a href="#menu" className={styles.a} onClick={() => {setNavbarExpanded(!navbarExpanded)}}><img className={styles.hamMenu}src="src/assets/images/ham-menu.png" alt="menu" /></a>
-                <ol className={`${styles.ol} ${navbarExpanded ? styles.open : styles.closed}`} >
+                <a href="#menu" className={ `${styles.a} ${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} onClick={() => {setNavbarExpanded(!navbarExpanded)}}>
+                <label htmlFor="nav-toggle"   className={ `${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} onClick={()=>{setCrossMenu(!crossMenu)}}>
+                    <div className={styles.line}></div>
+                    <div className={styles.line}></div>
+                    <div className={styles.line}></div>
+                </label>
+                </a>
+                <ol className={`${styles.ol} ${navbarExpanded ? `${styles.open} ${styles.line}` : styles.closed}`} >
                     <li className={styles.li}><NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" /></li>
                     <li className={styles.li}><NavItemWork workRef={workRef} targetId="work" name="2. Work"/></li>
                     <li className={styles.li}><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/></li>
@@ -110,12 +134,16 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
                         </li>
                         <li>
                             <Link
-                                to=""
+                                to="https://drive.google.com/file/d/1hdJ_95OjZgxwJEbg8eNwQ53u3jkBWQVj/view?usp=sharing"
                                 className={styles.resume}
                                 onMouseOver={handleMouseOver}
                                 onMouseOut={handleMouseOut}
-                                style={{ color: isHover ?  "#F29727" : "" }}
                             >
+                                <div className={styles.resumePdf}>
+                                    <Document file={resume}>
+                                        <Page pageNumber={1} onLoadSuccess={onDocumentLoadSuccess}></Page>
+                                    </Document>
+                                </div>
                                 Resume
                             </Link>
                         </li>
