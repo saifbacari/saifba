@@ -79,9 +79,10 @@ nav.hiddenNav {
   }
 
   .menuResponsive .ol {
-   
-    animation: slideAnimation 2s cubic-bezier(0.97, 0.02, 0.44, 0.99) ;
+    animation: slideAnimation 2s cubic-bezier(0.01, 0.1, 0.2, 0.01) ;
+    /*  animation: slideAnimation 2s cubic-bezier(0.97, 0.02, 0.44, 0.99) ;  */
     width: 100%;
+    text-align: center;
   }
 
   
@@ -97,7 +98,6 @@ nav.hiddenNav {
 
   .menuResponsive .ol {
       
-      text-align: center;
   }
 
   
@@ -114,26 +114,34 @@ nav.hiddenNav {
   .a .iconBurger .line {
     width: 30px;
     height: 4px;
-    background-color: black;
+    background-color: white;
     margin: 5px;
     border-radius: 5px;
+  
   }
+
+  .a {
+    z-index:20;
+  }
+
 
   
 
   .menuResponsive .a {
       padding-top: 38px;
       padding-right: 30px;
+      margin-top: 0px;
   }
 
- 
+
 
   .menuResponsive .open {
-    width: 80%;
-    transform: translateX(calc(0%));
+    padding-top: 106px;
+    width: 100%;
     display: block;
-    backdrop-filter: 20%;
   }
+
+
 
   .menuResponsive .open .line {
     transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
@@ -159,10 +167,10 @@ nav.hiddenNav {
   }
 
   .menuResponsive .li {
-    height: 100px;
+    height: 70px;
     list-style: none;
-    padding-top: 40px;
-    background-color: aquamarine;
+    padding-top: 79px;
+    background-color: brown;
   }
 }
 
