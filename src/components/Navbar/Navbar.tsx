@@ -12,6 +12,8 @@ import About from "../About/About";
 import resume from '../../utils/Resume.pdf';
 import {  Document, Page, pdfjs } from 'react-pdf';
 import ReactPDF from '@react-pdf/renderer';
+import { useScrollData } from "../hooks/useScrollData";
+import { useHandleScroll } from "../hooks/useHandleScroll";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -58,14 +60,10 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
     //effects & state for standard navbar//
     
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
-    const [scrollData, setScrollData] = useState({
-        y:0,
-        lastY: 0,
-    });
-    
+    const [scrollData, setScrollData] = useScrollData()
     const [showNav, setShowNav] = useState(true);
     
-    
+    useHandleScroll()
     useEffect(() =>{
         
         const handleScroll = () => {
@@ -78,8 +76,9 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
         }
         window.addEventListener('scroll', handleScroll );
         
-    },[])
+    },[]
     
+    )
     
     
     
@@ -138,7 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
         </label>
         </a>
         {backdropVisible && (
-            <Backdrop className={styles.backdrop}>
+            <Backdrop className={styles.backdrop} >
             
             <ol className={`${styles.ol} ${navbarExpanded ? `${styles.open} ${styles.line}` : styles.closed}`} >
             <li className={styles.li}

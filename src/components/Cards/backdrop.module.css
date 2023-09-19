@@ -12,3 +12,7 @@
 .closeBackDrop {
  display: none;
 }
+
+.no-Scroll {
+    overflow: hidden;
+}
