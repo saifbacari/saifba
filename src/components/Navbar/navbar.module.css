@@ -82,7 +82,7 @@ nav.hiddenNav {
     animation: slideAnimation 2s cubic-bezier(0.01, 0.1, 0.2, 0.01) ;
     /*  animation: slideAnimation 2s cubic-bezier(0.97, 0.02, 0.44, 0.99) ;  */
     width: 100%;
-    text-align: center;
+    
   }
 
   
@@ -131,6 +131,7 @@ nav.hiddenNav {
       padding-top: 38px;
       padding-right: 30px;
       margin-top: 0px;
+      position: absolute;
   }
 
 
@@ -171,6 +172,7 @@ nav.hiddenNav {
     list-style: none;
     padding-top: 79px;
     background-color: brown;
+    position: relative;
   }
 }
 
