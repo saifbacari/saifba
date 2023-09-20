@@ -64,21 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
     const [showNav, setShowNav] = useState(true);
     
     useHandleScroll()
-    useEffect(() =>{
-        
-        const handleScroll = () => {
-            setScrollData(prevState => {
-                return {
-                    y: window.scrollY,
-                    lastY: prevState.y
-                }
-            })
-        }
-        window.addEventListener('scroll', handleScroll );
-        
-    },[]
-    
-    )
+
     
     
     
@@ -130,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
         <a href="#menu" className={ `${styles.a} ${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
         onClick={navEx}>
         <label htmlFor="nav-toggle"   className={ `${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
-        onClick={()=>{setCrossMenu(!crossMenu)}}>
+        onClick={()=>{setCrossMenu(!crossMenu); unlockScrolling();} }>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
@@ -158,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
             >
             <Link
             to="https://drive.google.com/file/d/1hdJ_95OjZgxwJEbg8eNwQ53u3jkBWQVj/view?usp=sharing"
-            className={styles.resume}
+            className={`${styles.resume} ${styles.resumeResp}`}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             onClick={() =>{unlockScrolling()}}

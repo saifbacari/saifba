@@ -21,7 +21,7 @@ nav.hiddenNav {
   }
 
   nav.navLinks li {
-    display: inline-block;
+    /*display: inline-block;*/
     text-align: right;
     vertical-align: top;
     padding-top: 0px;
@@ -36,6 +36,10 @@ nav.hiddenNav {
       border-radius: 5px;
       margin-left: 15px;
     }
+
+ 
+
+
   
   li .resumePdf{
       display: none;
@@ -85,6 +89,8 @@ nav.hiddenNav {
     
   }
 
+
+
   
   @keyframes slideAnimation {
     100% {
@@ -93,11 +99,6 @@ nav.hiddenNav {
     0% {
       transform: translateX(calc(100%));
     }
-  }
-
-
-  .menuResponsive .ol {
-      
   }
 
   
@@ -125,13 +126,12 @@ nav.hiddenNav {
   }
 
 
-  
-
   .menuResponsive .a {
       padding-top: 38px;
       padding-right: 30px;
       margin-top: 0px;
       position: absolute;
+      flex: 1
   }
 
 
@@ -139,10 +139,8 @@ nav.hiddenNav {
   .menuResponsive .open {
     padding-top: 106px;
     width: 100%;
-    display: block;
+    
   }
-
-
 
   .menuResponsive .open .line {
     transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
@@ -172,7 +170,12 @@ nav.hiddenNav {
     list-style: none;
     padding-top: 79px;
     background-color: brown;
-    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menuResponsive .resumeResp {
+    height: 30px;
   }
 }
 
