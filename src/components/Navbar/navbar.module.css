@@ -21,7 +21,7 @@ nav.hiddenNav {
   }
 
   nav.navLinks li {
-    /*display: inline-block;*/
+    display: inline-block;
     text-align: right;
     vertical-align: top;
     padding-top: 0px;

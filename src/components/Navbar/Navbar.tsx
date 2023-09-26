@@ -11,9 +11,13 @@ import '../SharedStyles/sharedStyles.css';
 import About from "../About/About";
 import resume from '../../utils/Resume.pdf';
 import {  Document, Page, pdfjs } from 'react-pdf';
+import { useLockScrolling } from "../hooks/useLockScrolling";
 import ReactPDF from '@react-pdf/renderer';
 import { useScrollData } from "../hooks/useScrollData";
-import { useHandleScroll } from "../hooks/useHandleScroll";
+import { useScrollHandler } from "../hooks/useScrollHandler";
+import { useExpandNavbar } from "../hooks/useExpandNavbar";
+import { useUnlockScrolling } from "../hooks/useUnlockScrolling";
+import { useDocumentLoad } from "../hooks/useDocumentLoad";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -31,92 +35,65 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
     //logique react-pdf //
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
+    //const [numPages, setNumPages] = useState(null);
+    //const [pageNumber, setPageNumber] = useState(1);
     
-    function onDocumentLoadSuccess ({}) {
-        setNumPages(numPages);
-        setPageNumber(1);
-    }
+    //function onDocumentLoadSuccess ({}) {
+        //setNumPages(numPages);
+        //setPageNumber(1);
+    //}
+
+    const onDocumentLoadSuccess = useDocumentLoad();
     
     //effect & state for navbar responsive//
     //const [navbarVisible, setNavbarVisible] = useState(true);
     
     //const [prevScrollPos, setProvScrollPos] = useState(0);
     
-    const [navbarExpanded, setNavbarExpanded] = useState(false);
+    //const [navbarExpanded, setNavbarExpanded] = useState(false);
     
-    const navbExp = navbarExpanded ? "open" : "";
+    //const navbExp = navbarExpanded ? "open" : "";
 
     //
     
     const [crossMenu, setCrossMenu ] = useState(false);
     
-    const [backdropVisible, setBackdropVisible] = useState(false);
+    //const [backdropVisible, setBackdropVisible] = useState(false);
 
-    
-    
-    
     //effects & state for standard navbar//
     
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
-    const [scrollData, setScrollData] = useScrollData()
-    const [showNav, setShowNav] = useState(true);
-    
-    useHandleScroll()
+    //
+    const { showNav, scrollData } = useScrollHandler();
 
-    
-    
-    
-    useEffect(() => {
-        if (scrollData.y > 500){
-            setShowNav(true);
-        }else{
-            setShowNav(false);
-        }
-        
-        if (scrollData.lastY < scrollData.y){
-            setShowNav(false);
-        }else{
-            setShowNav(true);
-        }
-        
-    },[scrollData])
-    
-    useEffect(() => {
-        if (scrollData.y > scrollData.lastY ){
-            setShowNav(false);
-        } else {
-            setShowNav(true);
-        }
-    },[scrollData]);
+    const { navbarExpanded,setNavbarExpanded, backdropVisible, setBackdropVisible, toggleNavbarExpansion } = useExpandNavbar();
 
 
-       const navEx = () => {
-        
-        setNavbarExpanded(!navbarExpanded);
-        setBackdropVisible(!navbarExpanded)
-        
-        if (!navbarExpanded) {
-            document.body.style.overflow = 'hidden';
-        }  
-       }
+    //
 
-       const unlockScrolling = () =>{
-        document.body.style.overflow = 'unset';
-       } 
+//refactor bloquer //
+
     
 
-  
+
+
+      const unlockScrolling = useUnlockScrolling();
+
+      // const unlockScrolling = () =>{
+        //document.body.style.overflow = 'unset';
+       //} 
+    
+
+ // fin refactor //
     
     return (
         <>
         
         <div className={`${showNav ? `${styles.menuResponsive}`  : styles.closed} ${styles.menuResponsive }`} >
         <a href="#menu" className={ `${styles.a} ${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
-        onClick={navEx}>
+        onClick={toggleNavbarExpansion}>
         <label htmlFor="nav-toggle"   className={ `${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
-        onClick={()=>{setCrossMenu(!crossMenu); unlockScrolling();} }>
+        onClick={()=>{setCrossMenu(!crossMenu)}}>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
@@ -128,23 +105,23 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
             <ol className={`${styles.ol} ${navbarExpanded ? `${styles.open} ${styles.line}` : styles.closed}`} >
             <li className={styles.li}
             onClick={() => {setNavbarExpanded(!navbarExpanded);
-                setBackdropVisible(!navbarExpanded); unlockScrolling();}
+                setBackdropVisible(!navbarExpanded); unlockScrolling;}
             }
             ><NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" /></li>
             <li className={styles.li}
             onClick={() => {setNavbarExpanded(!navbarExpanded);
-                setBackdropVisible(!navbarExpanded); unlockScrolling();}
+                setBackdropVisible(!navbarExpanded); unlockScrolling;}
             }
             ><NavItemWork workRef={workRef} targetId="work" name="2. Work"/></li>
             <li className={styles.li} 
             onClick={() => {setNavbarExpanded(!navbarExpanded);
                 setBackdropVisible(!navbarExpanded); unlockScrolling();}
             }><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/></li>
-            <li className={styles.li} onClick={() => {unlockScrolling()}}
+            <li className={styles.li} onClick={() => {unlockScrolling}}
             >
             <Link
             to="https://drive.google.com/file/d/1hdJ_95OjZgxwJEbg8eNwQ53u3jkBWQVj/view?usp=sharing"
-            className={`${styles.resume} ${styles.resumeResp}`}
+            className={styles.resume}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             onClick={() =>{unlockScrolling()}}
