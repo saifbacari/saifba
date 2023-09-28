@@ -1,5 +1,4 @@
 import React, { MutableRefObject, useRef } from "react";
-import useScrollToRef from "../hooks/useScrollToRef";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
 import styles from "../work/work.module.css";
