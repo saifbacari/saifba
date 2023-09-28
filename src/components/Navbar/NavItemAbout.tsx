@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
+import useScrollToRef from "../hooks/useScrollToRef";
+import { MutableRefObject } from 'react';
 import styles from "../About/about.module.css";
 
 interface NavItemAboutProps {
@@ -14,7 +16,13 @@ const NavItemAbout: React.FC<NavItemAboutProps> = ({
   name,
   aboutRef
 }) => {
+
   const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
+
+  //const scrollToRef = useScrollToRef(aboutRef)
+
+  const linkRef = useRef<HTMLAnchorElement | null>(null);
+
 
   const handleScroll = () => {
     if (aboutRef.current) {
@@ -25,16 +33,19 @@ const NavItemAbout: React.FC<NavItemAboutProps> = ({
       });
     }
   };
+ 
 
   return (
       <Link
+        ref={linkRef}
         to={`#${targetId}`}
         className={styles.navLink}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
         onClick={() => {
-          handleScroll();
-        }} // Utilisez la fonction de défilement ici
+          handleScroll()
+        }    
+      } 
         style={{ color: isHover ? "#F29727" : "" }}
       >
         {name}

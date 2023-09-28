@@ -1,4 +1,5 @@
 import React, { MutableRefObject, useRef } from "react";
+import useScrollToRef from "../hooks/useScrollToRef";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
 import styles from "../work/work.module.css";
@@ -15,7 +16,7 @@ const NavItemWork: React.FC<NavItemWorkProps> = ({
   workRef,
 }) => {
   const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
-  const linkRef = useRef<HTMLAnchorElement | null>(null);
+
 
   const handleScroll = () => {
     if (workRef.current) {
@@ -25,20 +26,27 @@ const NavItemWork: React.FC<NavItemWorkProps> = ({
         behavior: "smooth",
       });
     }
-  };
+  }; 
+
+  //const scrollToRef = useScrollToRef(workRef)
+
+  const linkRef = useRef<HTMLAnchorElement | null>(null);
+
 
   return (
         <Link
+          ref={linkRef}
           to={`#${targetId}`}
           className={styles.navLink}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           onClick={() => {
             handleScroll();
-          }}
+          }
+          }
           style={{ color: isHover ? "#F29727" : "" }}
         >
-          2. Work
+          {name}
         </Link>
   );
 };
