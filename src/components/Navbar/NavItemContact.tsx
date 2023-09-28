@@ -2,7 +2,6 @@ import React, { useRef, MutableRefObject } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import styles from "../Contact/contact.module.css";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
-import useScrollToRef from "../hooks/useScrollToRef";
 
 interface NavItemContactProps {
   targetId: string;
