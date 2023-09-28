@@ -2,6 +2,7 @@ import React, { useRef, MutableRefObject } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import styles from "../Contact/contact.module.css";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
+import useScrollToRef from "../hooks/useScrollToRef";
 
 interface NavItemContactProps {
   targetId: string;
@@ -18,6 +19,8 @@ const NavItemContact: React.FC<NavItemContactProps> = ({
 
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
+
+
   const handleScroll = () => {
     if (contactRef.current) {
       window.scrollTo({
@@ -26,7 +29,9 @@ const NavItemContact: React.FC<NavItemContactProps> = ({
         behavior: "smooth",
       });
     }
-  };
+  }; 
+
+  //const scrollToRef = useScrollToRef(contactRef)
 
   return (
     <Link
@@ -36,8 +41,11 @@ const NavItemContact: React.FC<NavItemContactProps> = ({
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onClick={() => {
-        handleScroll();
-      }}
+        handleScroll()
+      }
+        
+       
+      }
       style={{ color: isHover ? "#F29727" : "" }}
     >
       {name}
