@@ -26,4 +26,5 @@ const useScrollToRef = (ref: React.MutableRefObject<HTMLElement | null>) => {
 }
 
 export default useScrollToRef;
+export {};
 
