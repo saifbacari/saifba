@@ -5,7 +5,7 @@ import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Work from "../work/Work";
 import Contact from "../Contact/Contact";
-import profile from "src/assets/images/profile.png";
+import profile from "../../assets/images/profile.png"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -38,7 +38,7 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
                         id vulputate sem sodales id. Nunc at viverra erat. Donec dignissim 
                         aliquam nulla, non luctus quam convallis ut.
                     </p>
-                    <img src="src/assets/images/profile.png" alt="Image 1" />
+                    <img src={profile} alt="Image 1" />
 
                     <p className={styles.titleStack}>Et harum quidem rerum facilis est et expedita distinctio :</p>
                     <ul className={styles.stacklist}>
