@@ -5,8 +5,10 @@ import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Work from "../work/Work";
 import Contact from "../Contact/Contact";
+import profile from "src/assets/images/profile.png";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import '../../app.module.css';
 
 

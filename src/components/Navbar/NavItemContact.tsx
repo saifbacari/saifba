@@ -18,8 +18,6 @@ const NavItemContact: React.FC<NavItemContactProps> = ({
 
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
-
-
   const handleScroll = () => {
     if (contactRef.current) {
       window.scrollTo({
@@ -28,9 +26,7 @@ const NavItemContact: React.FC<NavItemContactProps> = ({
         behavior: "smooth",
       });
     }
-  }; 
-
-  //const scrollToRef = useScrollToRef(contactRef)
+  };
 
   return (
     <Link
@@ -40,11 +36,8 @@ const NavItemContact: React.FC<NavItemContactProps> = ({
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
       onClick={() => {
-        handleScroll()
-      }
-        
-       
-      }
+        handleScroll();
+      }}
       style={{ color: isHover ? "#F29727" : "" }}
     >
       {name}
