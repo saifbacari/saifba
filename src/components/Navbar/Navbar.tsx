@@ -34,6 +34,8 @@ interface NavbarProps {
 
 
 const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+ 
     //logique react-pdf //
     //const [numPages, setNumPages] = useState(null);
     //const [pageNumber, setPageNumber] = useState(1);
@@ -69,6 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
     const { navbarExpanded,setNavbarExpanded, backdropVisible, setBackdropVisible, toggleNavbarExpansion } = useExpandNavbar();
 
 
+
     //
 
 //refactor bloquer //
@@ -89,32 +92,71 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
 
 
 //a refactoriser en custom hook  
- const handleBurgerClick = () => {
+const handleBurgerClick = () => {
     toggleNavbarExpansion();
-    if (showNav) {
-        return useLockScrolling();
-        
-    } else if (showNav!) {
-        return unlockScrolling();// Call your hook function
+    if (backdropVisible) {
+      setBackdropVisible(false); 
+      unlockScrolling();
+    } else {
+      setBackdropVisible(true); 
+      lockScrolling;
     }
-    else {
-       return unlockScrolling();
+  };
+
+  const closingNavbarHandler = () => {
+    if (backdropVisible){
+        setBackdropVisible(false)
+        setNavbarExpanded(false)
+        unlockScrolling();
     }
-};
+  }
+
+  const handleTest =  () => {
+    console.log("background non visible en console.log");
+  }
+
+//faire une note    sur anki et renommer la fonction flechée//
+    useEffect( () => {
+
+      const sizeChangeHandler = () => {
+    
+      setWindowWidth(window.innerWidth)
+      
+    }
+    window.addEventListener('resize', sizeChangeHandler)
+
+    return () => {
+      window.removeEventListener('resize', sizeChangeHandler)
+    }
+    },[]);
+
+    useEffect(() => {
+      closeStateNavbar();
+    },[windowWidth])
+
+  const closeStateNavbar = () =>{
+    if (windowWidth >  600){
+      setNavbarExpanded(false);
+      setBackdropVisible(false)
+      unlockScrolling();
+    }
+
+  }
+
+
+//fin de note//
+
+
+
 
  // fin refactor //
 
     return (
         <>
         
-        <div className={`${showNav ? `${styles.menuResponsive}`  : styles.closed} ${styles.menuResponsive }`} >
+        <div className={`${showNav ? `${styles.menuResponsive}`  : styles.closed} ${styles.menuResponsive }`}>
         <a href="#menu" className={ `${styles.a} ${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
-        onClick={() => {
-            if (backdropVisible!) {
-              unlockScrolling();
-            }
-            handleBurgerClick();
-          }}>
+        onClick={handleBurgerClick}>
         <label htmlFor="nav-toggle"   className={ `${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
         onClick={()=>{setCrossMenu(!crossMenu)}}>
         <div className={styles.line}></div>
@@ -123,24 +165,21 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
         </label>
         </a>
         {backdropVisible && (
-            <Backdrop className={styles.backdrop} >
+            <Backdrop className={styles.backdrop} onClick={handleTest}>
             
-            <ol className={`${styles.ol} ${navbarExpanded ? `${styles.open} ${styles.line}` : styles.closed}`} >
+            <ol className={`${styles.ol} ${navbarExpanded ? `${styles.open} ${styles.line}` : styles.closed}`}>
+              <p>{windowWidth}</p>
             <li className={styles.li}
-            onClick={() => {setNavbarExpanded(!navbarExpanded);
-                setBackdropVisible(!navbarExpanded); unlockScrolling();}
-            }
+           
+            onClick={() => {closingNavbarHandler()}}
             ><NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" /></li>
             <li className={styles.li}
-            onClick={() => {setNavbarExpanded(!navbarExpanded);
-                setBackdropVisible(!navbarExpanded); unlockScrolling();}
-            }
+            onClick={() => {closingNavbarHandler()}}
             ><NavItemWork workRef={workRef} targetId="work" name="2. Work"/></li>
+            <li className={styles.li}
+            onClick={() =>{closingNavbarHandler()}} 
+            ><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/></li>
             <li className={styles.li} 
-            onClick={() => {setNavbarExpanded(!navbarExpanded);
-                setBackdropVisible(!navbarExpanded); unlockScrolling();}
-            }><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/></li>
-            <li className={styles.li} onClick={() => {unlockScrolling()}}
             >
             <Link
             to="https://drive.google.com/file/d/1hdJ_95OjZgxwJEbg8eNwQ53u3jkBWQVj/view?usp=sharing"

@@ -37,7 +37,8 @@ const NavItemContact: React.FC<NavItemContactProps> = ({
       onMouseOut={handleMouseOut}
       onClick={() => {
         handleScroll();
-      }}
+        }
+      }
       style={{ color: isHover ? "#F29727" : "" }}
     >
       {name}
