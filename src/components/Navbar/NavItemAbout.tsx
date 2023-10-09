@@ -35,7 +35,7 @@ const NavItemAbout: React.FC<NavItemAboutProps> = ({
         onMouseOut={handleMouseOut}
         onClick={() => {
           handleScroll();
-        }} // Utilisez la fonction de défilement ici
+        }}
         style={{ color: isHover ? "#F29727" : "" }}
       >
         {name}

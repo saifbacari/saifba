@@ -7,14 +7,12 @@ interface NavItemContactProps {
   targetId: string;
   name: string;
   contactRef: React.MutableRefObject<HTMLElement | null>;
-  onClick: () => void;
 }
 
 const NavItemContact: React.FC<NavItemContactProps> = ({
   targetId,
   name,
-  contactRef, 
-  onClick
+  contactRef,
 }) => {
   const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
 
