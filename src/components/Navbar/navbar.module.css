@@ -125,17 +125,6 @@ nav.hiddenNav {
     z-index:20;
   }
 
-
-  .menuResponsive .a {
-      padding-top: 38px;
-      padding-right: 30px;
-      margin-top: 0px;
-      position: absolute;
-      flex: 1
-  }
-
-
-
   .menuResponsive .open {
     padding-top: 106px;
     width: 100%;
@@ -165,14 +154,33 @@ nav.hiddenNav {
     display:none;
   }
 
-  .menuResponsive .li {
+  .menuResponsive .liNavItem {
     height: 70px;
     list-style: none;
-    padding-top: 79px;
     background-color: brown;
     display: flex;
     justify-content: center;
+    pointer-events: none;
+
   }
+
+  .menuResponsive .liNavItem{
+    padding-top: 10%;
+  }
+
+  
+
+  .liNavItem a {
+    pointer-events: auto;
+  }
+
+  .menuResponsive .a {
+    padding-top: 38px;
+    padding-right: 30px;
+    margin-top: 0px;
+    position: absolute;
+    flex: 1;
+}
 
   .menuResponsive .resume {
     height: 30px;

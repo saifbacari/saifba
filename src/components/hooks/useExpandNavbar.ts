@@ -12,7 +12,6 @@ export const useExpandNavbar = () => {
         
         if (!navbarExpanded) {
             document.body.style.overflow = 'hidden';
-            console.log('test');
         }  
         
        }

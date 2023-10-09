@@ -18,6 +18,7 @@ import { useScrollHandler } from "../hooks/useScrollHandler";
 import { useExpandNavbar } from "../hooks/useExpandNavbar";
 import { useUnlockScrolling } from "../hooks/useUnlockScrolling";
 import { useDocumentLoad } from "../hooks/useDocumentLoad";
+import { useCloseNavbar } from "../hooks/useCloseNavbar";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -34,88 +35,48 @@ interface NavbarProps {
 
 
 const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef })  => {
+
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
- 
-    //logique react-pdf //
-    //const [numPages, setNumPages] = useState(null);
-    //const [pageNumber, setPageNumber] = useState(1);
-    
-    //function onDocumentLoadSuccess ({}) {
-        //setNumPages(numPages);
-        //setPageNumber(1);
-    //}
+
+    const unlockScrolling = useUnlockScrolling();
+
+    const lockScrolling = useLockScrolling();
 
     const onDocumentLoadSuccess = useDocumentLoad();
-    
-    //effect & state for navbar responsive//
-    //const [navbarVisible, setNavbarVisible] = useState(true);
-    
-    //const [prevScrollPos, setProvScrollPos] = useState(0);
-    
-    //const [navbarExpanded, setNavbarExpanded] = useState(false);
-    
-    //const navbExp = navbarExpanded ? "open" : "";
 
-    //
-    
     const [crossMenu, setCrossMenu ] = useState(false);
-    
-    //const [backdropVisible, setBackdropVisible] = useState(false);
 
-    //effects & state for standard navbar//
-    
     const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
-    //
+  
     const { showNav, scrollData } = useScrollHandler();
 
     const { navbarExpanded,setNavbarExpanded, backdropVisible, setBackdropVisible, toggleNavbarExpansion } = useExpandNavbar();
 
-
-
-    //
-
-//refactor bloquer //
-
-    
-
-
-
-      const unlockScrolling = useUnlockScrolling();
-
-      const lockScrolling = useLockScrolling();
-
-      // const unlockScrolling = () =>{
-        //document.body.style.overflow = 'unset';
-       //} 
-    
-
-
+    const handleBurgerClick = () => {
+      toggleNavbarExpansion();
+      if (backdropVisible) {
+        setBackdropVisible(false); 
+        unlockScrolling();
+      } else {
+        setBackdropVisible(true); 
+        lockScrolling;
+      }
+    };
 
 //a refactoriser en custom hook  
-const handleBurgerClick = () => {
-    toggleNavbarExpansion();
-    if (backdropVisible) {
-      setBackdropVisible(false); 
-      unlockScrolling();
-    } else {
-      setBackdropVisible(true); 
-      lockScrolling;
-    }
-  };
 
-  const closingNavbarHandler = () => {
-    if (backdropVisible){
-        setBackdropVisible(false)
-        setNavbarExpanded(false)
-        unlockScrolling();
-    }
-  }
 
-  const handleTest =  () => {
-    console.log("background non visible en console.log");
-  }
 
-//faire une note    sur anki et renommer la fonction flechée//
+   const closingNavbarHandler = () => {
+     if (backdropVisible){
+       setBackdropVisible(false)
+       setNavbarExpanded(false)
+         unlockScrolling();
+   }
+   }
+
+
+    useCloseNavbar();
     useEffect( () => {
 
       const sizeChangeHandler = () => {
@@ -131,10 +92,10 @@ const handleBurgerClick = () => {
     },[]);
 
     useEffect(() => {
-      closeStateNavbar();
+      closeStateNavbarAfterResizing();
     },[windowWidth])
 
-  const closeStateNavbar = () =>{
+  const closeStateNavbarAfterResizing = () =>{
     if (windowWidth >  600){
       setNavbarExpanded(false);
       setBackdropVisible(false)
@@ -144,49 +105,47 @@ const handleBurgerClick = () => {
   }
 
 
-//fin de note//
+//const closeStateNavbar = useCloseNavbar(); inutile pour l'instant - a supprimer
 
 
-
-
- // fin refactor //
 
     return (
         <>
         
         <div className={`${showNav ? `${styles.menuResponsive}`  : styles.closed} ${styles.menuResponsive }`}>
         <a href="#menu" className={ `${styles.a} ${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
-        onClick={handleBurgerClick}>
+        onClick={() => {handleBurgerClick()}}>
         <label htmlFor="nav-toggle"   className={ `${styles.iconBurger} ${crossMenu ? `${styles.line}` : styles.iconBurger}`} 
-        onClick={()=>{setCrossMenu(!crossMenu)}}>
+        /*onClick={()=>{setCrossMenu(!crossMenu)}}*/>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         </label>
         </a>
         {backdropVisible && (
-            <Backdrop className={styles.backdrop} onClick={handleTest}>
+            <Backdrop className={styles.backdrop} >
             
             <ol className={`${styles.ol} ${navbarExpanded ? `${styles.open} ${styles.line}` : styles.closed}`}>
-              <p>{windowWidth}</p>
-            <li className={styles.li}
+
+            <li className={styles.liNavItem}
            
             onClick={() => {closingNavbarHandler()}}
             ><NavItemAbout aboutRef={aboutRef} targetId="about" name="1. About" /></li>
-            <li className={styles.li}
+            <li className={styles.liNavItem}
             onClick={() => {closingNavbarHandler()}}
             ><NavItemWork workRef={workRef} targetId="work" name="2. Work"/></li>
-            <li className={styles.li}
-            onClick={() =>{closingNavbarHandler()}} 
-            ><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"/></li>
-            <li className={styles.li} 
+            <li className={styles.liNavItem}
+            onClick={() => {closingNavbarHandler()}}
+            ><NavItemContact contactRef={contactRef} targetId="contact" name="3. Contact"
+            /></li>
+            <li className={styles.liNavItem} 
             >
             <Link
             to="https://drive.google.com/file/d/1hdJ_95OjZgxwJEbg8eNwQ53u3jkBWQVj/view?usp=sharing"
             className={styles.resume}
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
-            onClick={() =>{unlockScrolling()}}
+            //onClick={() =>{unlockScrolling()}}//a supprimer si aucun effet en dehors
             >
             <div className={styles.resumePdf}>
             <Document file={resume}>

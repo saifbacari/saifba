@@ -16,6 +16,7 @@ const NavItemAbout: React.FC<NavItemAboutProps> = ({
 }) => {
   const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
 
+
   const handleScroll = () => {
     if (aboutRef.current) {
       window.scrollTo({

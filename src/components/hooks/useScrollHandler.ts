@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useScrollHandler = () => {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(true);
   const [scrollData, setScrollData] = useState({
     y: 0,
     lastY: 0,

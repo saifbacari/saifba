@@ -4,10 +4,10 @@ import styles from './backdrop.module.css';
 interface BackdropProps {
     className?: string;
     children: ReactNode;
-    onClick:  () => void;
+    //onClick:  () => void;
 }
 
-const Backdrop: FC<BackdropProps> = ({ className, children, onClick }) => {
+const Backdrop: FC<BackdropProps> = ({ className, children}) => {
 
     const classes = 'backdrop' + (className || '')
     return <div className={styles.backdrop + ' ' + classes}>{children}</div>
