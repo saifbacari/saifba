@@ -30,6 +30,11 @@ const Contact: React.FC<ContactProps> = ({aboutRef, contactRef, workRef}) => {
       <button className="buttonOrange" onClick={() => window.location.href = "mailto:saifbacari@gmail.com"}>
         Contactez-moi
       </button>
+        <ul>
+          <li>Social Network 01</li>
+          <li>Social Network 02</li>
+          <li>Social Network 03</li>
+        </ul>
     </div>
   );
 };
