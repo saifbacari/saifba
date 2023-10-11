@@ -21,6 +21,18 @@
     color: #F29727;
   }
 
+  .socialNetworksList {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  .socialNetworksList li {
+    list-style: none;
+    padding-right: 23px;
+    padding-top: 23px;
+  }
+
   @media only screen and (max-width: 600px){
     .contact  {
         padding: 40px;

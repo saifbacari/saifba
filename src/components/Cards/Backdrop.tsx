@@ -7,7 +7,7 @@ interface BackdropProps {
     //onClick:  () => void;
 }
 
-const Backdrop: FC<BackdropProps> = ({ className, children}) => {
+const Backdrop: FC<BackdropProps> = ({ className, children }) => {
 
     const classes = 'backdrop' + (className || '')
     return <div className={styles.backdrop + ' ' + classes}>{children}</div>
