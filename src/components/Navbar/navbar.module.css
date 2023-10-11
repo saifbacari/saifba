@@ -7,6 +7,9 @@ nav {
   backdrop-filter: blur(8px);
   height: 75px;
   transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 nav.hiddenNav {
