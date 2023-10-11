@@ -83,7 +83,7 @@ nav.hiddenNav {
   }
 
   .menuResponsive .ol {
-    animation: slideAnimation 2s cubic-bezier(0.01, 0.1, 0.2, 0.01) ;
+    animation: slideAnimation 0.3s cubic-bezier(0.01, 0.1, 0.2, 0.01) ;
     /*  animation: slideAnimation 2s cubic-bezier(0.97, 0.02, 0.44, 0.99) ;  */
     width: 100%;
     
@@ -112,13 +112,48 @@ nav.hiddenNav {
     
   }
 
-  .a .iconBurger .line {
+  .line {
     width: 30px;
     height: 4px;
-    background-color: white;
+    background-color: purple;
     margin: 5px;
     border-radius: 5px;
-  
+    transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
+    transform: none;
+    
+  }
+
+  .line1 {
+    width: 30px;
+    height: 4px;
+    background-color: grey;
+    margin: 5px;
+    border-radius: 5px;
+    transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
+    transform: translateY(9px) rotate(50deg);
+    /*transform: translateY(9px) rotate(50deg);*/
+  }
+
+  .line2 {
+    width: 30px;
+    height: 4px;
+    background-color: grey;
+    margin: 5px;
+    border-radius: 5px;
+    transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
+        transform: translateX(10px);
+    opacity: 0;
+  }
+
+  .line3 {
+    width: 30px;
+    height: 4px;
+    background-color: grey;
+    margin: 5px;
+    border-radius: 5px;
+    transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
+    transform: translateY(-9px) rotate(-50deg);
+    /*transform: translateY(-9px) rotate(-50deg);*/
   }
 
   .a {
@@ -131,7 +166,7 @@ nav.hiddenNav {
     
   }
 
-  .menuResponsive .open .line {
+   .menuResponsive .open .line {
     transition: 0.3s cubic-bezier(0.97, 0.02, 0.44, 0.99);
   }
   .menuResponsive .open .line:nth-child(1) {
