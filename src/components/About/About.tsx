@@ -8,9 +8,8 @@ import Contact from "../Contact/Contact";
 import profile from "../../assets/images/profile.png"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import '../../app.module.css';
-
+import Wrapper from "../../helpers/Wrapper";
+import "../../helpers/wrapper.module.css"
 
 interface AboutProps {
    aboutRef: React.MutableRefObject<null>
@@ -20,7 +19,8 @@ interface AboutProps {
 const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
  
     return (
-        <div className={styles.about} id="about" ref={aboutRef}>
+        <Wrapper>
+                    <div className={styles.about} id="about" ref={aboutRef}>
              <Card className="header" >
                 <h3>01. About Me</h3>
                 <hr className={styles.hr}/>
@@ -54,7 +54,9 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
                         </div>
                     </ul>
               </div>
-         </div>     
+         </div>   
+        </Wrapper>
+  
     )
 }
 

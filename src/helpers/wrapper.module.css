@@ -1,4 +1,8 @@
 .wrapper {
-    padding-inline: 80px;
-}
-
+    padding-inline: 150px;
+  
+    @media screen and (max-width: 768px) {
+      padding-inline: 5%;
+    }
+  }
+  

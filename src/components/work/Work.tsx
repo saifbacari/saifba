@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import Wrapper from "../../helpers/Wrapper";
 
 interface WorkProps {
   aboutRef: React.MutableRefObject<null>;
@@ -18,7 +19,8 @@ interface WorkProps {
 
 const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
   return (
-    <div className={styles.work} ref={workRef}>
+    <Wrapper>
+          <div className={styles.work} ref={workRef}>
       <Card className="header">
         <h3>02. Some Stuffs I Made</h3>
         <hr className={styles.hr} />
@@ -123,6 +125,9 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
         </li>
       </ul>
     </div>
+
+    </Wrapper>
+
   );
 };
 

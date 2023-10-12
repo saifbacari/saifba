@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import React, { useRef } from 'react';
 import MainPage from './pages/MainPage';
-import Navbar from './components/Navbar/Navbar'
+//import Navbar from './components/Navbar/Navbar'
 import About from './components/About/About';
 import Hero from './components/Hero/Hero';
 import Work from './components/work/Work';

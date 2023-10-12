@@ -5,8 +5,8 @@
     padding-bottom: 25px;
     height: 500px;
     padding-top: 12px;
-    align-items: center;
-    padding: 126px;
+    align-items: center; 
+    padding-top: 186px;
 }
 
 .contact h3 {
@@ -37,10 +37,4 @@
     .contact  {
         padding: 40px;
     }     
-      }
-  @media only screen and (min-width: 600px){
-        .contact  {
-            padding-inline: 80px;
-            padding-top: 186px;
-        }
       }
