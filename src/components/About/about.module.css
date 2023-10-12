@@ -21,7 +21,7 @@
   }
 
  .hr {
-    flex: 0.39;
+    flex: 1;
   } 
 
   
@@ -56,10 +56,5 @@
         
       }
       
-      @media only screen and (min-width: 600px){
-        .about  {
-            padding-inline: 80px;
-        }
-        
-      }
+
   

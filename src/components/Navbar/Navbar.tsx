@@ -205,7 +205,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef }) => {
           styles.navLinks
         }`}
       >
-        <div>Welcome Button</div>
+        <div className={styles.welcomeLogo}>Welcome Button</div>
         <ul>
           <li className={styles.navLink}>
             <NavItemAbout

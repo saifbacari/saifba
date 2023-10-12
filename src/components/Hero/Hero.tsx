@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styles from "./hero.module.css";
+import Wrapper from "../../helpers/Wrapper";
 import "../SharedStyles/sharedStyles.css";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
 
@@ -9,18 +10,13 @@ const Hero: FC<HeroProps> = () => {
   const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
 
   return (
+    <Wrapper>
     <div className={`${styles.hero}`}>
       <h1 className={styles.h1}>Hi, my name is...</h1>
-      <h2 className={styles.h2}>Greta Garbo</h2>
-      <h3 className={styles.h3}>Software Engineer Fullstack</h3>
+      <h2 className={styles.h2}>Kenny Cairo</h2>
+      <h3 className={styles.h3}>Front-End Developer Javascript | React JS</h3>
       <p className={styles.p}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum
+        I'm a Javascript-React JS Developer. I write code for build things to turn them into real life products. 
       </p>
       <button
         className={styles.buttonHero}
@@ -31,6 +27,8 @@ const Hero: FC<HeroProps> = () => {
         minima veniam
       </button>
     </div>
+    </Wrapper>
+
   );
 };
 
