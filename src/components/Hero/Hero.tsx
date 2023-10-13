@@ -1,13 +1,18 @@
 import React, { FC } from "react";
 import styles from "./hero.module.css";
 import Wrapper from "../../helpers/Wrapper";
+import { Link } from 'react-router-dom';
+import resume from "../../utils/Resume.pdf";
+import { Document, Page } from "react-pdf";
 import "../SharedStyles/sharedStyles.css";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
+import { useDocumentLoad } from "../hooks/useDocumentLoad";
 
 interface HeroProps {}
 
 const Hero: FC<HeroProps> = () => {
   const { isHover, handleMouseOver, handleMouseOut } = useHoverColorChange();
+  const onDocumentLoadSuccess = useDocumentLoad();
 
   return (
     <Wrapper>
@@ -24,7 +29,22 @@ const Hero: FC<HeroProps> = () => {
         onMouseOut={handleMouseOut}
         style={{ color: isHover ? "#F29727" : "" }}
       >
-        minima veniam
+       <Link
+              to="https://drive.google.com/file/d/1hdJ_95OjZgxwJEbg8eNwQ53u3jkBWQVj/view?usp=sharing"
+              className={styles.resume}
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <div className={styles.resumePdf}>
+                <Document file={resume}>
+                  <Page
+                    pageNumber={1}
+                    onLoadSuccess={onDocumentLoadSuccess}
+                  ></Page>
+                </Document>
+              </div>
+              My Resume
+            </Link>
       </button>
     </div>
     </Wrapper>
