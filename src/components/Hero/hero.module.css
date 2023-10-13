@@ -19,6 +19,7 @@
  font-family: 'Tektur', cursive;
  margin-top: 0px;
  padding-top: 94px;
+ font-size: 17px;
 }
 
 .h2 {
@@ -38,6 +39,10 @@
 
 .p {
     color:#CCD6F6;
+}
+
+.resumePdf {
+    display: none;
 }
 
 @media only screen and (max-width: 600px){

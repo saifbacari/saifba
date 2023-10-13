@@ -22,7 +22,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
     <Wrapper>
           <div className={styles.work} ref={workRef}>
       <Card className="header">
-        <h3>02. Some Stuffs I Made</h3>
+        <h3>02. Some Stuffs I've built</h3>
         <hr className={styles.hr} />
       </Card>
       <ul className={styles.listProject}>
@@ -34,21 +34,21 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            Projet A
+            Bookstar
           </h3>
           <h4>Fonctionnalités effectuées:</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} />
-              Javascript
+              React JS
             </li>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} />
-              SQL
+              HTML/CSS
             </li>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} />
-              Typescript
+              Vite jS/Vercel
             </li>
           </ul>
         </li>
@@ -60,20 +60,19 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            Projet B
+            Watch List Movie
           </h3>
           <h4>Fonctionnalités effectuées :</h4>
           <ul className={styles.stacksProject}>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> React
-              JS
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Ruby on Rails
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> SQL
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Vanilla JS
             </li>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} />{" "}
-              Typescript
+              HTML-CSS
             </li>
           </ul>
         </li>
@@ -85,18 +84,18 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            Projet C
+            Insulin
           </h3>
           <h4>Fonctionnalités effectuées :</h4>
           <ul className={styles.stacksProject}>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Python
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Ruby on Rails
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Java
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Javascript/Bootstrap
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> C++
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> PostgreSQL
             </li>
           </ul>
         </li>
@@ -108,18 +107,18 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            Projet D
+            Site Perso
           </h3>
           <h4>Fonctionnalités effectuées :</h4>
           <ul className={styles.stacksProject}>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Python
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> React JS
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Java
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Typescript/Javascript
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> C++
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> HTML/CSS
             </li>
           </ul>
         </li>

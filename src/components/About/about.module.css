@@ -33,6 +33,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap:16px;
+    padding-top:36px;
     list-style: none;
     color: #CCD6F6;
   }
