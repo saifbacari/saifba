@@ -6,7 +6,10 @@ import Work from "../work/Work";
 import styles from "./contact.module.css";
 import Wrapper from "../../helpers/Wrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { faXTwitter } from '@fortawesome/free-solid-svg-icons'
+import { icon } from "@fortawesome/fontawesome-svg-core";
+import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 interface ContactProps {
@@ -34,11 +37,7 @@ const Contact: React.FC<ContactProps> = ({ aboutRef, contactRef, workRef }) => {
         >
           Contactez-moi
         </button>
-        <ul className={styles.socialNetworksList}>
-          <li>Twitter FA Button to add</li>
-          <li>Social Network 02</li>
-          <li>Social Network 03</li>
-        </ul>
+
       </div>
     </Wrapper>
   );
