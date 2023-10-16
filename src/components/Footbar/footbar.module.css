@@ -1,0 +1,26 @@
+.footbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+hr {
+    flex:1;
+    height: 1px; /* Définit la hauteur de la ligne */
+    background-color: #000; /* Couleur de la ligne, changez-la en fonction de vos besoins */
+    border: none; /* Supprime la bordure par défaut */
+    margin: 5px 0; 
+}
+
+.socialList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+li {
+    margin-right: 20px;
+}

@@ -4,6 +4,7 @@ import About from '../components/About/About';
 import Hero from '../components/Hero/Hero';
 import Work from '../components/work/Work';
 import Contact from '../components/Contact/Contact';
+import Footbar from '../components/Footbar/Footbar'
 import styles from '../app.module.css'
 
 
@@ -21,6 +22,7 @@ const MainPage: React.FC<MainPageProps> = ({aboutRef,contactRef,workRef,targetId
             <About aboutRef={aboutRef} workRef={workRef} contactRef={contactRef} />
             <Work workRef={workRef} aboutRef={aboutRef} contactRef={contactRef} />
             <Contact aboutRef={aboutRef} contactRef={contactRef} workRef={workRef} />
+            <Footbar />
          </div>
 );
 
