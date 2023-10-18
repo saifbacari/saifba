@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, MutableRefObject } from "react";
 import styles from "./navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
 import Wrapper from "../../helpers/Wrapper";
 import NavItemAbout from "./NavItemAbout";
@@ -205,7 +205,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef }) => {
           styles.navLinks
         }`}
       >
-        <div className={styles.welcomeLogo}>Welcome Button</div>
+        <div className={styles.welcomeLogo}><a href="/">G. Garbo</a></div>
         <ul>
           <li className={styles.navLink}>
             <NavItemAbout

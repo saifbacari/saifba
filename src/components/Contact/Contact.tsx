@@ -24,18 +24,14 @@ const Contact: React.FC<ContactProps> = ({ aboutRef, contactRef, workRef }) => {
       <div className={styles.contact} ref={contactRef}>
         <h3>Contact</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Etiam
-          tempor orci eu lobortis elementum nibh. Ultrices sagittis orci a
-          scelerisque purus semper eget. Enim ut sem viverra aliquet eget.
-          Mauris sit amet massa vitae. Bibendum ut tristique et egestas quis
-          ipsum. Convallis posuere morbi leo urna molestie
+          I'm currently looking for new opportunities. Feel free to let me any email. I'll contact 
+          you  as soon as possible!
         </p>
         <button
           className="buttonOrange"
           onClick={() => (window.location.href = "mailto:saifbacari@gmail.com")}
         >
-          Contactez-moi
+          Say Hello
         </button>
 
       </div>
