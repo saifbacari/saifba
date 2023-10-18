@@ -13,8 +13,8 @@ import styles from './app.module.css'
 import './index.css';
 
 const App: React.FC = () => {
-  const aboutRef = useRef(null); // Assurez-vous de l'initialiser correctement
-  const workRef = useRef(null); // représente la section À propos
+  const aboutRef = useRef(null);
+  const workRef = useRef(null); 
   const contactRef = useRef(null); 
 
   return (

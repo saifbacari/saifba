@@ -92,7 +92,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Ruby on Rails
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Javascript/Bootstrap
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> JS/Bootstrap
             </li>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> PostgreSQL
@@ -115,7 +115,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> React JS
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Typescript/Javascript
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Typescript/JS
             </li>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> HTML/CSS
