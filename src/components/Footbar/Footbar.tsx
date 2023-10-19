@@ -20,9 +20,9 @@ const Footbar: React.FC<FootbarProps> = ({}) => {
         <div className={styles.footbar}>
             <p>Greta Garbo© 2023</p>
             <ul className={styles.socialList}>
-                <li><FontAwesomeIcon icon={faXTwitter} /></li>
-                <li><FontAwesomeIcon icon={faLinkedinIn} /></li>
-                <li><FontAwesomeIcon icon={faGithub} /></li>
+                <li><a href="https://twitter.com/Saifdot"><FontAwesomeIcon icon={faXTwitter} /></a></li>
+                <li><a href="https://www.linkedin.com/in/saifoullah-bacari/"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>
+                <li><a href="https://github.com/saifbacari"><FontAwesomeIcon icon={faGithub} /></a></li>
             </ul>
         </div>  
 
