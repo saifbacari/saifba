@@ -18,7 +18,7 @@ const Hero: FC<HeroProps> = () => {
     <Wrapper>
     <div className={`${styles.hero}`}>
       <h1 className={styles.h1}>Hi, my name is...</h1>
-      <h2 className={styles.h2}>Greta Garbo</h2>
+      <h2 className={styles.h2}>Saïfoullah Bacari</h2>
       <h3 className={styles.h3}>Front-End Developer Javascript | React JS</h3>
       <p className={styles.p}>
         I'm a Javascript-React JS Developer. I write code for build things to turn them into real life products. 
