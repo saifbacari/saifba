@@ -6,7 +6,7 @@ import Wrapper from "../../helpers/Wrapper";
 import NavItemAbout from "./NavItemAbout";
 import NavItemContact from "./NavItemContact";
 import NavItemWork from "./NavItemWork";
-import Backdrop from "../Cards/Backdrop";
+import Backdrop from "../UI/Backdrop";
 import "../SharedStyles/sharedStyles.css";
 import About from "../About/About";
 import resume from "../../utils/Resume.pdf";
@@ -205,7 +205,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef }) => {
           styles.navLinks
         }`}
       >
-        <div className={styles.welcomeLogo}><a href="/">G. Garbo</a></div>
+        <div className={styles.welcomeLogo}><a href="/">Saïfoullah B.</a></div>
         <ul>
           <li className={styles.navLink}>
             <NavItemAbout

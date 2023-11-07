@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import styles from "./about.module.css";
-import Card from "../Cards/Card";
+import Card from "../UI/Card";
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Work from "../work/Work";
 import Contact from "../Contact/Contact";
-import profile from "../../assets/images/profile.png";
+import mainPicture0 from "../../assets/images/mainPicture0.jpeg"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Wrapper from "../../helpers/Wrapper";
@@ -32,7 +32,7 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
             Wagon Bootamp. I would like to work on a tech product to put my
             skills to good use in a stimulating environment.
           </p>
-          <img src={profile} alt="Image 1" />
+          <img src={mainPicture0} alt="Image 1" />
 
           <p className={styles.titleStack}>
           Here are a few of the technologies I'm currently acquainted with and have been using recently : 

@@ -1,5 +1,5 @@
 import React, { MutableRefObject } from "react";
-import Card from "../Cards/Card";
+import Card from "../UI/Card";
 import Navbar from "../Navbar/Navbar";
 import About from "../About/About";
 import Hero from "../Hero/Hero";

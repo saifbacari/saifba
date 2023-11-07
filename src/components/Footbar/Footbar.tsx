@@ -18,7 +18,7 @@ const Footbar: React.FC<FootbarProps> = ({}) => {
         <Wrapper>
         <hr/>
         <div className={styles.footbar}>
-            <p>Greta Garbo© 2023</p>
+            <p>Saïfoullah Bacari© 2023</p>
             <ul className={styles.socialList}>
                 <li><a href="https://twitter.com/Saifdot"><FontAwesomeIcon icon={faXTwitter} /></a></li>
                 <li><a href="https://www.linkedin.com/in/saifoullah-bacari/"><FontAwesomeIcon icon={faLinkedinIn} /></a></li>

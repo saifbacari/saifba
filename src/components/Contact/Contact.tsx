@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Card from "../Cards/Card";
+import Card from "../UI/Card";
 import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Work from "../work/Work";
