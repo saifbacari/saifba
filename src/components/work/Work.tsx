@@ -84,18 +84,18 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            
+            News website with API
           </h3>
           <h4>Utilized Technologies/Stack :</h4>
           <ul className={styles.stacksProject}>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Ruby on Rails
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> React JS
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> JS/Bootstrap
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> JS
             </li>
             <li>
-              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> PostgreSQL
+              <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> HTML/CSS
             </li>
           </ul>
         </li>
