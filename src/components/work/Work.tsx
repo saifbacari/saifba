@@ -36,7 +36,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </a>
             Bookstar
           </h3>
-          <h4>Fonctionnalités effectuées:</h4>
+          <h4>Utilized Technologies/Stack :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} />
@@ -62,7 +62,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </a>
             Watch List Movie
           </h3>
-          <h4>Fonctionnalités effectuées :</h4>
+          <h4>Utilized Technologies/Stack :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Ruby on Rails
@@ -84,9 +84,9 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            Insulin
+            
           </h3>
-          <h4>Fonctionnalités effectuées :</h4>
+          <h4>Utilized Technologies/Stack :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Ruby on Rails
@@ -109,7 +109,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </a>
             Site Perso
           </h3>
-          <h4>Fonctionnalités effectuées :</h4>
+          <h4>Utilized Technologies/Stack :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> React JS
