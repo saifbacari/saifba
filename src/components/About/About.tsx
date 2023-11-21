@@ -28,15 +28,15 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
 
         <div className={styles.content}>
           <p>
-            After an experience in Finance, I decided to become a developer. I
-            learned essentially Ruby on Rails, HTML, CSS and Javascript at Le
+            After an experience in Finance, I decided to shift carreer a developer. I
+            worked on Ruby on Rails, HTML, CSS and Javascript at Le
             Wagon Bootamp. I would like to work on a tech product to put my
             skills to good use in a stimulating environment.
           </p>
           <img src={mainPicture} alt="Image 1" />
 
           <p className={styles.titleStack}>
-          Here are a few of the technologies I'm currently acquainted with and have been using recently : 
+          Here are a few of the technologies I'm familiar with and have recently used to make my own projects : 
           </p>
           <ul className={styles.stacklist}>
             <div>
