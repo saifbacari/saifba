@@ -28,7 +28,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
       <ul className={styles.listProject}>
         <li className={styles.elementList}>
           <h3 className={styles.h3ElementList}>
-            <a>
+            <a href="https://bookstar-app-v2.vercel.app/">
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
                 className={styles.faArrowUpRightFromSquare}
@@ -48,13 +48,13 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </li>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} />
-              Vite jS/Vercel
+              Vite JS/Vercel
             </li>
           </ul>
         </li>
         <li className={styles.elementList}>
           <h3 className={styles.h3ElementList}>
-            <a>
+            <a href="https://github.com/saifbacari/rails-watch-list">
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
                 className={styles.faArrowUpRightFromSquare}
@@ -78,7 +78,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
         </li>
         <li className={styles.elementList}>
           <h3 className={styles.h3ElementList}>
-            <a>
+            <a href="https://github.com/saifbacari/api_news_website">
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
                 className={styles.faArrowUpRightFromSquare}
@@ -101,13 +101,13 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
         </li>
         <li className={styles.elementList}>
           <h3 className={styles.h3ElementList}>
-            <a>
+            <a href="https://github.com/saifbacari/saifba">
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            Site Perso
+            Personal website
           </h3>
           <h4>Utilized Technologies/Stack :</h4>
           <ul className={styles.stacksProject}>
