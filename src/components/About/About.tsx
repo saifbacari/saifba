@@ -33,7 +33,8 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
             Wagon Bootamp. I would like to work on a tech product to put my
             skills to good use in a stimulating environment.
           </p>
-          <img src={mainPicture} alt="Image 1" />
+          {/*Ajouter du texte pour couvrir la zone bcp trop vide à coté de la photo */}
+          <img src={mainPicture} className={styles.profile} alt="Image 1" />
 
           <p className={styles.titleStack}>
           Here are a few of the technologies I'm familiar with and have recently used to make my own projects : 
