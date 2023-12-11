@@ -25,10 +25,10 @@
 .h2 {
     color: #d6def7;
     font-family: 'Quicksand', sans-serif;
-    font-size: 70px;
+    font-size: 60px;
     transition: font-size 0.5s ease;
     font-weight: bolder;
-    font-size: calc(43px + (70 - 43) * ((100vw - 600px) / (1000 - 600)));
+    font-size: calc(43px + (60 - 43) * ((100vw - 600px) / (1000 - 600)));
     margin: 10px 0;
 }
 
