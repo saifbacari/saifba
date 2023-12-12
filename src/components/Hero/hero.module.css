@@ -4,7 +4,7 @@
 }
 
 .buttonHero {
-    background-color: transparent;
+    background-color:  rgb(243, 159, 56);
     color: rgb(243, 159, 56);
     border-color: initial
 }
@@ -39,6 +39,7 @@
 
 .p {
     color:#CCD6F6;
+    font-size: 20px;
 }
 
 .resumePdf {
