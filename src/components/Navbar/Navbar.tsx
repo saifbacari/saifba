@@ -97,8 +97,6 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef }) => {
     }
   };
 
-  //const closeStateNavbar = useCloseNavbar(); inutile pour l'instant - a supprimer
-
   const selected = document.querySelector;
 
   return (
@@ -122,7 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef }) => {
             className={`${styles.iconBurger} ${
               crossMenu ? `${styles.open}` : styles.iconBurger
             }`}
-            /*onClick={()=>{setCrossMenu(!crossMenu)}}*/
+           
           >
             <div
               className={`${backdropVisible ? `${styles.line1}` : styles.line}`}
@@ -181,7 +179,6 @@ const Navbar: React.FC<NavbarProps> = ({ aboutRef, contactRef, workRef }) => {
                   className={styles.resume}
                   onMouseOver={handleMouseOver}
                   onMouseOut={handleMouseOut}
-                  //onClick={() =>{unlockScrolling()}}//a supprimer si aucun effet en dehors
                 >
                   <div className={styles.resumePdf}>
                     <Document file={resume}>

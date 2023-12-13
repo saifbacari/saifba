@@ -4,9 +4,9 @@ import Wrapper from "../../helpers/Wrapper";
 import { Link } from 'react-router-dom';
 import resume from "../../utils/Resume.pdf";
 import { Document, Page } from "react-pdf";
-import "../SharedStyles/sharedStyles.css";
 import { useHoverColorChange } from "../hooks/useHoverColorChange";
 import { useDocumentLoad } from "../hooks/useDocumentLoad";
+import "../SharedStyles/sharedStyles.css";
 
 interface HeroProps {}
 

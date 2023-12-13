@@ -10,6 +10,7 @@ import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Wrapper from "../../helpers/Wrapper";
+import "../SharedStyles/sharedStyles.css";
 
 interface WorkProps {
   aboutRef: React.MutableRefObject<null>;
@@ -22,7 +23,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
     <Wrapper>
           <div className={styles.work} ref={workRef}>
       <Card className="header">
-        <h3>02. Some Stuffs I've built</h3>
+        <h3 className={styles.titleSection}>02. Some Stuffs I've built</h3>
         <hr className={styles.hr} />
       </Card>
       <ul className={styles.listProject}>
@@ -36,7 +37,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </a>
             Bookstar
           </h3>
-          <h4>Utilized Technologies/Stack :</h4>
+          <h4>Technologies/Stacks :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} />
@@ -62,7 +63,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </a>
             Watch List Movie
           </h3>
-          <h4>Utilized Technologies/Stack :</h4>
+          <h4>Technologies/Stacks :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> Ruby on Rails
@@ -86,7 +87,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </a>
             News website with API
           </h3>
-          <h4>Utilized Technologies/Stack :</h4>
+          <h4>Technologies/Stacks :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> React JS
@@ -109,7 +110,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
             </a>
             Personal website
           </h3>
-          <h4>Utilized Technologies/Stack :</h4>
+          <h4>Technologies/Stacks :</h4>
           <ul className={styles.stacksProject}>
             <li>
               <FontAwesomeIcon icon={faPlay} className={styles.faPlay} /> React JS

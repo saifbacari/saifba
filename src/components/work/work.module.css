@@ -3,11 +3,15 @@
     margin-right: 0;
 }
 
+.titleSection {
+    font-weight: normal;
+    font-size:20px;
+}
+
 .work .listProject {
     
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-template-rows: 221px;
     grid-gap: 21px;
     padding-left: 0;
 }
@@ -34,10 +38,13 @@
   }
 
 
-    /*codepen*/
+    
 .h3ElementList {
     margin-top: 0px;
     padding-top: 0px;
+    font-size:22px;
+    font-weight: normal;
+
 }
 
 .work .elementList:last-child {
@@ -52,11 +59,13 @@ padding-bottom: 25px;
 .work .faPlay {
     padding-right: 4px;
     width: 8px;
+    color: #7EB77D;
 }
 
 .faArrowUpRightFromSquare {
     padding-right: 12px;
     padding-top: 12px;
+    color: #76B476;
 }
 
 .work a {

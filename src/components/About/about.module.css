@@ -6,6 +6,15 @@
 
   }
 
+  .titleSection{
+    font-weight: normal;
+    font-size: 20px;
+  }
+
+  .faChevronRight{
+    color: #F39F38;
+  }
+
   .content p {
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;

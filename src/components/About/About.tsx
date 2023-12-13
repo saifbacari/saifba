@@ -11,6 +11,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Wrapper from "../../helpers/Wrapper";
 import "../../helpers/wrapper.module.css";
+import "../SharedStyles/sharedStyles.css";
 
 interface AboutProps {
   aboutRef: React.MutableRefObject<null>;
@@ -22,7 +23,7 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
     <Wrapper>
       <div className={styles.about} id="about" ref={aboutRef}>
         <Card className="header">
-          <h3>01. About Me</h3>
+          <h3 className={styles.titleSection}>01. About Me</h3>
           <hr className={styles.hr} />
         </Card>
 
@@ -33,7 +34,7 @@ const About: React.FC<AboutProps> = ({ aboutRef, contactRef, workRef }) => {
             Wagon Bootamp. I would like to work on a tech product to put my
             skills to good use in a stimulating environment.
           </p>
-          {/*Ajouter du texte pour couvrir la zone bcp trop vide à coté de la photo */}
+         
           <img src={mainPicture} className={styles.profile} alt="Image 1" />
 
           <p className={styles.titleStack}>

@@ -22,7 +22,8 @@ const Contact: React.FC<ContactProps> = ({ aboutRef, contactRef, workRef }) => {
   return (
     <Wrapper>
       <div className={styles.contact} ref={contactRef}>
-        <h3>Contact</h3>
+        <h2 className={styles.h2}>Need More Info?</h2>
+        <h3>Get in Touch!</h3>
         <p>
           I'm currently looking for new opportunities. Feel free to let me any email. I'll contact 
           you  as soon as possible!
