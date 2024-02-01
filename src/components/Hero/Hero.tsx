@@ -30,7 +30,7 @@ const Hero: FC<HeroProps> = () => {
         style={{ color: isHover ? "#F29727" : "" }}
       >
        <Link
-              to="https://drive.google.com/file/d/1hdJ_95OjZgxwJEbg8eNwQ53u3jkBWQVj/view?usp=sharing"
+              to="https://drive.google.com/file/d/12vqvEutK6h_-3_V4yZHbSE89WXqoCXNm/view?usp=sharing"
               className={styles.resume}
               onMouseOver={handleMouseOver}
               onMouseOut={handleMouseOut}

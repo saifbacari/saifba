@@ -85,7 +85,7 @@ const Work: React.FC<WorkProps> = ({ aboutRef, workRef, contactRef }) => {
                 className={styles.faArrowUpRightFromSquare}
               />
             </a>
-            News website with API
+            News infos with API
           </h3>
           <h4>Technologies/Stacks :</h4>
           <ul className={styles.stacksProject}>
